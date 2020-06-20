@@ -1,0 +1,42 @@
+{
+  "group": "jarm",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "jarm:ruby_ingot_ingot"
+    },
+    "1": {
+      "item": "jarm:ruby_ingot_ingot"
+    },
+    "2": {
+      "item": "jarm:ruby_ingot_ingot"
+    },
+    "3": {
+      "item": "jarm:ruby_ingot_ingot"
+    },
+    "4": {
+      "item": "jarm:ruby_ingot_ingot"
+    },
+    "5": {
+      "item": "jarm:ruby_ingot_ingot"
+    },
+    "6": {
+      "item": "jarm:ruby_ingot_ingot"
+    },
+    "7": {
+      "item": "jarm:ruby_ingot_ingot"
+    },
+    "8": {
+      "item": "jarm:ruby_ingot_ingot"
+    }
+  },
+  "result": {
+    "item": "jarm:ruby_ingot_ore_block",
+    "count": 1
+  }
+}

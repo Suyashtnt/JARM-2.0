@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "jarm:block/ruby_ingot_ore_block"
+    }
+  }
+}

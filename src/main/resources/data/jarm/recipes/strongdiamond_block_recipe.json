@@ -1,0 +1,37 @@
+{
+  "group": "jarm",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "jarm:strengthend_diamond"
+    },
+    {
+      "item": "jarm:strengthend_diamond"
+    },
+    {
+      "item": "jarm:strengthend_diamond"
+    },
+    {
+      "item": "jarm:strengthend_diamond"
+    },
+    {
+      "item": "jarm:strengthend_diamond"
+    },
+    {
+      "item": "jarm:strengthend_diamond"
+    },
+    {
+      "item": "jarm:strengthend_diamond"
+    },
+    {
+      "item": "jarm:strengthend_diamond"
+    },
+    {
+      "item": "jarm:strengthend_diamond"
+    }
+  ],
+  "result": {
+    "item": "jarm:strong_diamond_block",
+    "count": 1
+  }
+}

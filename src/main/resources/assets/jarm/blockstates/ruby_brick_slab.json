@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "jarm:block/ruby_brick_slab"
+    },
+    "type=top": {
+      "model": "jarm:block/ruby_brick_slab_top"
+    },
+    "type=double": {
+      "model": "jarm:block/ruby_brick_slab_full"
+    }
+  }
+}

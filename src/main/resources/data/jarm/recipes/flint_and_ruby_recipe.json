@@ -1,0 +1,16 @@
+{
+  "group": "jarm",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "jarm:strengthend_diamond"
+    },
+    {
+      "item": "minecraft:flint"
+    }
+  ],
+  "result": {
+    "item": "jarm:ruby_dimension",
+    "count": 1
+  }
+}

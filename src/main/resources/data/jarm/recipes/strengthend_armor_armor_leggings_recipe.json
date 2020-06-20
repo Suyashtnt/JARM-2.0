@@ -1,0 +1,36 @@
+{
+  "group": "jarm",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "3 5",
+    "6 8"
+  ],
+  "key": {
+    "0": {
+      "item": "jarm:strengthend_diamond"
+    },
+    "1": {
+      "item": "jarm:strengthend_diamond"
+    },
+    "2": {
+      "item": "jarm:strengthend_diamond"
+    },
+    "3": {
+      "item": "jarm:strengthend_diamond"
+    },
+    "5": {
+      "item": "jarm:strengthend_diamond"
+    },
+    "6": {
+      "item": "jarm:strengthend_diamond"
+    },
+    "8": {
+      "item": "jarm:strengthend_diamond"
+    }
+  },
+  "result": {
+    "item": "jarm:strengthend_armor_armorlegs",
+    "count": 1
+  }
+}

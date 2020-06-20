@@ -1,0 +1,30 @@
+{
+  "group": "jarm",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    " 4 ",
+    " 7 "
+  ],
+  "key": {
+    "0": {
+      "item": "jarm:ruby"
+    },
+    "1": {
+      "item": "jarm:ruby"
+    },
+    "2": {
+      "item": "jarm:ruby"
+    },
+    "4": {
+      "item": "minecraft:stick"
+    },
+    "7": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "jarm:ruby_tools_pickaxe",
+    "count": 1
+  }
+}

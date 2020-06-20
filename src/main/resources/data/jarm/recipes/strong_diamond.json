@@ -1,0 +1,42 @@
+{
+  "group": "jarm",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "jarm:block_of_ruby"
+    },
+    "1": {
+      "item": "minecraft:diamond_block"
+    },
+    "2": {
+      "item": "jarm:block_of_ruby"
+    },
+    "3": {
+      "item": "minecraft:diamond_block"
+    },
+    "4": {
+      "item": "jarm:ruby_ingot_ore_block"
+    },
+    "5": {
+      "item": "minecraft:diamond_block"
+    },
+    "6": {
+      "item": "jarm:block_of_ruby"
+    },
+    "7": {
+      "item": "minecraft:diamond_block"
+    },
+    "8": {
+      "item": "jarm:block_of_ruby"
+    }
+  },
+  "result": {
+    "item": "jarm:strengthend_diamond",
+    "count": 1
+  }
+}

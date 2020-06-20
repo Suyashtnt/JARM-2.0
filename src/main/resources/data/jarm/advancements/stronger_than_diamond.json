@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "jarm:strengthend_diamond"
+    },
+    "title": {
+      "translate": "advancements.stronger_than_diamond.title"
+    },
+    "description": {
+      "translate": "advancements.stronger_than_diamond.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "stronger_than_diamond": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 1
+  },
+  "parent": "jarm:almost_like_diamond"
+}
