@@ -7,6 +7,6 @@ import net.minecraft.world.World;
 public class RubyGuardian extends ZombieEntity {
 
     public RubyGuardian(EntityType<? extends ZombieEntity> entityType, World world) {
-        super(world);
+        super(entityType, world);
     }
 }

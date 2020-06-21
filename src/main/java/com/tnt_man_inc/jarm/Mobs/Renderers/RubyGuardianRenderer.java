@@ -9,7 +9,7 @@ import net.minecraft.util.Identifier;
 public class RubyGuardianRenderer extends ZombieBaseEntityRenderer<RubyGuardian, ZombieEntityModel<RubyGuardian>> {
 
     public RubyGuardianRenderer(EntityRenderDispatcher entityRenderDispatcher) {
-        super(entityRenderDispatcher, new ZombieEntityModel<>(0.0f, false), new ZombieEntityModel<>(0.5F, true), new ZombieEntityModel<>(1.0F, true));
+        super(entityRenderDispatcher, new ZombieEntityModel(0.0f, false), new ZombieEntityModel(0.5F, true), new ZombieEntityModel(1.0F, true));
     }
 
     @Override

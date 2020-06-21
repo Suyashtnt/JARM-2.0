@@ -67,7 +67,7 @@ public class Main implements ModInitializer {
   public static final EntityType<RubyGuardian> RUBY_GUARDIAN = Registry.register(
           Registry.ENTITY_TYPE,
           new Identifier("jarm", "ruby_guardian"),
-          FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, RubyGuardian::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
+          FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, RubyGuardian::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
   );
 
 
