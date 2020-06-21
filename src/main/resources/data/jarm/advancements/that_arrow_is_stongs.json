@@ -4,10 +4,10 @@
       "item": "jarm:ruby_enforced_bow"
     },
     "title": {
-      "translate": "advancements.that_arrow_is_stong.title"
+      "translate": "advancements.that_arrow_is_strong.title"
     },
     "description": {
-      "translate": "advancements.that_arrow_is_stong.descr"
+      "translate": "advancements.that_arrow_is_strong.desc"
     },
     "frame": "task",
     "show_toast": true,
