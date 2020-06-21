@@ -5,5 +5,8 @@
   "item.jarm.ruby_ingot": "Ruby Ingot",
   "item.jarm.strong_diamond": "Strengthened Diamond",
   "item.jarm.block_of_ruby": "Block of ruby",
+  "item.jarm.ruby_bricks": "Ruby Bricks",
+  "item.jarm.ruby_bricks_slab": "Ruby Bricks Slab",
+  "item.jarm.strong_diamond_block": "Strengthened Diamond Block",
   "itemGroup.jarm.general": "JARM"
 }

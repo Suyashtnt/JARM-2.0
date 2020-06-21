@@ -1,5 +1,7 @@
 package com.tnt_man_inc.jarm;
 
+import com.tnt_man_inc.jarm.Mobs.Renderers.RubyGuardianRenderer;
+import com.tnt_man_inc.jarm.Mobs.RubyGuardian;
 import com.tnt_man_inc.jarm.WorldGenAndDimensions.BiomeRegister;
 import com.tnt_man_inc.jarm.WorldGenAndDimensions.RubyBiome;
 import com.tnt_man_inc.jarm.items_and_blocks.*;
@@ -9,7 +11,13 @@ import net.fabricmc.fabric.api.biomes.v1.FabricBiomes;
 import net.fabricmc.fabric.api.biomes.v1.OverworldBiomes;
 import net.fabricmc.fabric.api.biomes.v1.OverworldClimate;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
+import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.event.registry.RegistryEntryAddedCallback;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
+import net.minecraft.entity.EntityDimensions;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -56,7 +64,11 @@ public class Main implements ModInitializer {
     }
   }
 
-
+  public static final EntityType<RubyGuardian> RUBY_GUARDIAN = Registry.register(
+          Registry.ENTITY_TYPE,
+          new Identifier("jarm", "ruby_guardian"),
+          FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, RubyGuardian::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
+  );
 
 
   @Override
@@ -74,6 +86,12 @@ public class Main implements ModInitializer {
     Registry.register(Registry.ITEM, new Identifier("jarm", "menu"), RUBY_ICON);
     Items.init();
     Blocks.init();
+
+    //registers Ruby Guardian
+    FabricDefaultAttributeRegistry.register(RUBY_GUARDIAN, RubyGuardian.createMobAttributes());
+
+    //registers it's renderer
+    EntityRendererRegistry.INSTANCE.register(Main.RUBY_GUARDIAN, (dispatcher, context) -> new RubyGuardianRenderer(dispatcher));
   }
 
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "jarm:blocks/ruby_bricks",
+    "particle": "jarm:blocks/ruby_bricks"
+  }
+}

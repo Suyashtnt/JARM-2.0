@@ -18,6 +18,9 @@ public class Blocks {
 
     public static final Block RUBY_BLOCK = register("block_of_ruby",
             new Block(FabricBlockSettings.of(Material.METAL).hardness(4.0f)));
+    public static final Block RUBY_BRICK = register("ruby_bricks", new RubyBricks());
+    public static final Block RUBY_BRICK_SLAB = register("ruby_bricks_slab", new RubyBricks());
+    public static final Block STRONG_DIAMOND_BLOCK = register("strong_diamond_block", new StrongDiamondBlock());
 
     public static <T extends Block> T register(String name, T Block) {
         Registry.register(Registry.ITEM, new Identifier("jarm", name),

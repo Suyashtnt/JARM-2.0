@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab_top",
+  "textures": {
+    "bottom": "jarm:blocks/ruby_bricks",
+    "top": "jarm:blocks/ruby_bricks",
+    "side": "jarm:blocks/ruby_bricks"
+  }
+}

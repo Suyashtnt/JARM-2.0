@@ -3,7 +3,7 @@
   "type": "minecraft:stonecutting",
   "count": 2,
   "ingredient": {
-    "item": "jarm:ruby_brick"
+    "item": "jarm:ruby_bricks"
   },
-  "result": "jarm:ruby_brick_stairs"
+  "result": "jarm:ruby_bricks_stairs"
 }
