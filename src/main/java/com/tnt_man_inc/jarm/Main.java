@@ -15,12 +15,12 @@ import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.event.registry.RegistryEntryAddedCallback;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
-import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.SpawnEggItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
@@ -67,7 +67,7 @@ public class Main implements ModInitializer {
   public static final EntityType<RubyGuardian> RUBY_GUARDIAN = Registry.register(
           Registry.ENTITY_TYPE,
           new Identifier("jarm", "ruby_guardian"),
-          FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, RubyGuardian::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
+          FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, RubyGuardian::new).dimensions(EntityType.ZOMBIE.getDimensions()).build()
   );
 
 
@@ -87,8 +87,10 @@ public class Main implements ModInitializer {
     Items.init();
     Blocks.init();
 
-    //registers Ruby Guardian
+    //registers Ruby Guardian and spawn egg
     FabricDefaultAttributeRegistry.register(RUBY_GUARDIAN, RubyGuardian.createMobAttributes());
+    Registry.register(Registry.ITEM, new Identifier("jarm", "ruby_guardian_spawn_egg"), new SpawnEggItem(RUBY_GUARDIAN, 0xC41F1F, 0xC41F72, new Item.Settings().group(ItemGroup.MISC)));
+
 
     //registers it's renderer
     EntityRendererRegistry.INSTANCE.register(Main.RUBY_GUARDIAN, (dispatcher, context) -> new RubyGuardianRenderer(dispatcher));

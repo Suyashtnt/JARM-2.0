@@ -14,6 +14,6 @@ public class RubyGuardianRenderer extends ZombieBaseEntityRenderer<RubyGuardian,
 
     @Override
     public Identifier getTexture(RubyGuardian entity) {
-        return new Identifier("jarm", "textures/rubyguardian2.png");
+        return new Identifier("jarm", "textures/rubyguardian.png");
     }
 }
