@@ -3,31 +3,31 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "jarm:strengthend_diamond"
+      "item": "jarm:strong_diamond"
     },
     {
-      "item": "jarm:strengthend_diamond"
+      "item": "jarm:strong_diamond"
     },
     {
-      "item": "jarm:strengthend_diamond"
+      "item": "jarm:strong_diamond"
     },
     {
-      "item": "jarm:strengthend_diamond"
+      "item": "jarm:strong_diamond"
     },
     {
-      "item": "jarm:strengthend_diamond"
+      "item": "jarm:strong_diamond"
     },
     {
-      "item": "jarm:strengthend_diamond"
+      "item": "jarm:strong_diamond"
     },
     {
-      "item": "jarm:strengthend_diamond"
+      "item": "jarm:strong_diamond"
     },
     {
-      "item": "jarm:strengthend_diamond"
+      "item": "jarm:strong_diamond"
     },
     {
-      "item": "jarm:strengthend_diamond"
+      "item": "jarm:strong_diamond"
     }
   ],
   "result": {

@@ -1,12 +1,13 @@
 {
   "item.jarm.ruby": "Ruby",
-  "item.jarm.ruby_ore": "Ruby ore",
+  "block.jarm.ruby_ore": "Ruby ore",
+  "block.jarm.special_ruby_ore": "Special Ruby ore",
   "item.jarm.ruby_nugget": "Ruby Nugget",
   "item.jarm.ruby_ingot": "Ruby Ingot",
   "item.jarm.strong_diamond": "Strengthened Diamond",
-  "item.jarm.block_of_ruby": "Block of ruby",
-  "item.jarm.ruby_bricks": "Ruby Bricks",
-  "item.jarm.ruby_bricks_slab": "Ruby Bricks Slab",
-  "item.jarm.strong_diamond_block": "Strengthened Diamond Block",
+  "block.jarm.block_of_ruby": "Block of ruby",
+  "block.jarm.ruby_bricks": "Ruby Bricks",
+  "block.jarm.ruby_bricks_slab": "Ruby Bricks Slab",
+  "block.jarm.strong_diamond_block": "Strengthened Diamond Block",
   "itemGroup.jarm.general": "JARM"
 }

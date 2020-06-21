@@ -17,6 +17,7 @@ import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRe
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
+import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -89,6 +90,7 @@ public class Main implements ModInitializer {
 
     //registers Ruby Guardian and spawn egg
     FabricDefaultAttributeRegistry.register(RUBY_GUARDIAN, RubyGuardian.createMobAttributes());
+    FabricDefaultAttributeRegistry.register(RUBY_GUARDIAN, HostileEntity.createHostileAttributes());
     Registry.register(Registry.ITEM, new Identifier("jarm", "ruby_guardian_spawn_egg"), new SpawnEggItem(RUBY_GUARDIAN, 0xC41F1F, 0xC41F72, new Item.Settings().group(ItemGroup.MISC)));
 
 

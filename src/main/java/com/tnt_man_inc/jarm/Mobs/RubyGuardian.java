@@ -8,5 +8,6 @@ public class RubyGuardian extends ZombieEntity {
 
     public RubyGuardian(EntityType<? extends ZombieEntity> entityType, World world) {
         super(entityType, world);
+
     }
 }
