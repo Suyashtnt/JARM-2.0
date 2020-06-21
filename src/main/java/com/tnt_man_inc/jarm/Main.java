@@ -4,8 +4,8 @@ import com.tnt_man_inc.jarm.Mobs.Renderers.RubyGuardianRenderer;
 import com.tnt_man_inc.jarm.Mobs.RubyGuardian;
 import com.tnt_man_inc.jarm.WorldGenAndDimensions.BiomeRegister;
 import com.tnt_man_inc.jarm.WorldGenAndDimensions.RubyBiome;
-import com.tnt_man_inc.jarm.items_and_blocks.*;
-
+import com.tnt_man_inc.jarm.items_and_blocks.Blocks;
+import com.tnt_man_inc.jarm.items_and_blocks.Items;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biomes.v1.FabricBiomes;
 import net.fabricmc.fabric.api.biomes.v1.OverworldBiomes;
@@ -24,11 +24,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
-import net.minecraft.world.gen.GenerationStep;
 
 public class Main implements ModInitializer {
   public static final Item RUBY_ICON = new Item(new Item.Settings().group(null));

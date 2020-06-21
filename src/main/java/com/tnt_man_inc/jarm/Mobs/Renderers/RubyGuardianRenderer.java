@@ -1,15 +1,15 @@
 package com.tnt_man_inc.jarm.Mobs.Renderers;
 
-import com.tnt_man_inc.jarm.Mobs.Models.RubyGuardianModel;
 import com.tnt_man_inc.jarm.Mobs.RubyGuardian;
 import net.minecraft.client.render.entity.EntityRenderDispatcher;
-import net.minecraft.client.render.entity.MobEntityRenderer;
+import net.minecraft.client.render.entity.ZombieBaseEntityRenderer;
+import net.minecraft.client.render.entity.model.ZombieEntityModel;
 import net.minecraft.util.Identifier;
 
-public class RubyGuardianRenderer extends MobEntityRenderer<RubyGuardian, RubyGuardianModel> {
+public class RubyGuardianRenderer extends ZombieBaseEntityRenderer<RubyGuardian, ZombieEntityModel<RubyGuardian>> {
 
     public RubyGuardianRenderer(EntityRenderDispatcher entityRenderDispatcher) {
-        super(entityRenderDispatcher, new RubyGuardianModel(), 0.5f);
+        super(entityRenderDispatcher, new ZombieEntityModel<>(0.0f, false), new ZombieEntityModel<>(0.5F, true), new ZombieEntityModel<>(1.0F, true));
     }
 
     @Override

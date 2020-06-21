@@ -1,10 +1,10 @@
 package com.tnt_man_inc.jarm;
 
-import com.tnt_man_inc.jarm.Mobs.Renderers.RubyGuardianRenderer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
+import net.minecraft.client.render.entity.ZombieEntityRenderer;
 
 @Environment(EnvType.CLIENT)
 public class ClientInit implements ClientModInitializer {
@@ -16,6 +16,7 @@ public class ClientInit implements ClientModInitializer {
          *
          * Entity Renderers can also manipulate the model before it renders based on entity context (EndermanEntityRenderer#render).
          */
-        EntityRendererRegistry.INSTANCE.register(Main.RUBY_GUARDIAN, (dispatcher, context) -> new RubyGuardianRenderer(dispatcher));
+        EntityRendererRegistry.INSTANCE.register(Main.RUBY_GUARDIAN, (dispatcher, context) -> new ZombieEntityRenderer(dispatcher) {
+        });
     }
 }
