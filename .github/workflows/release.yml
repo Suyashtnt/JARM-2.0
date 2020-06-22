@@ -28,7 +28,7 @@ jobs:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
           draft: false
-          prerelease: false
+          prerelease: true
       - name: Setup ENV
         run: echo ::set-env name=TAG::$(echo ${GITHUB_REF:10})
       - name: Grant execute permission for gradlew
