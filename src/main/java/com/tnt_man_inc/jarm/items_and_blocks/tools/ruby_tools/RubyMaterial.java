@@ -9,7 +9,7 @@ import java.util.function.Supplier;
 
 public enum RubyMaterial implements ToolMaterial {
 
-    RUBY(3, 1301, 7F, 2.5F, 20, () -> Ingredient.ofItems(Items.RUBY));
+    RUBY(3, 1301, 7F, 2F, 20, () -> Ingredient.ofItems(Items.RUBY));
 
     private final int miningLevel;
     private final int itemDurability;
