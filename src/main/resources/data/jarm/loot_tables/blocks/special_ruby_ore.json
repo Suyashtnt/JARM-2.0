@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "jarm:ruby"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "jarm:ruby"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "jarm:ruby"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "jarm:ruby"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "jarm:ruby"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ]
+    }
+  ]
+}
