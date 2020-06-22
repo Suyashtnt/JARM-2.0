@@ -1,4 +1,4 @@
-package com.tnt_man_inc.jarm.items_and_blocks.tools.ruby_tools;
+package com.tnt_man_inc.jarm.items_and_blocks.tools.strong_diamond_tools;
 
 import com.tnt_man_inc.jarm.items_and_blocks.Items;
 import net.minecraft.item.ToolMaterial;
@@ -7,9 +7,9 @@ import net.minecraft.util.Lazy;
 
 import java.util.function.Supplier;
 
-public enum RubyToolsMaterial implements ToolMaterial {
+public enum StrongDiamondMaterial implements ToolMaterial {
 
-    RUBY(3, 1301, 7F, 2.5F, 20, () -> Ingredient.ofItems(Items.RUBY));
+    STRONG_DIAMOND(3, 1301, 7F, 2.5F, 20, () -> Ingredient.ofItems(Items.RUBY));
 
     private final int miningLevel;
     private final int itemDurability;
@@ -18,7 +18,7 @@ public enum RubyToolsMaterial implements ToolMaterial {
     private final int enchantability;
     private final Lazy<Ingredient> repairIngredient;
 
-    RubyToolsMaterial(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier<Ingredient> repairIngredient) {
+    StrongDiamondMaterial(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier<Ingredient> repairIngredient) {
         this.miningLevel = miningLevel;
         this.itemDurability = itemDurability;
         this.miningSpeed = miningSpeed;

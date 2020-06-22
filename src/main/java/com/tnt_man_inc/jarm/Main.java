@@ -7,6 +7,7 @@ import com.tnt_man_inc.jarm.WorldGenAndDimensions.RubyBiome;
 import com.tnt_man_inc.jarm.items_and_blocks.Blocks;
 import com.tnt_man_inc.jarm.items_and_blocks.Items;
 import com.tnt_man_inc.jarm.items_and_blocks.tools.ruby_tools.RubyTools;
+import com.tnt_man_inc.jarm.items_and_blocks.tools.strong_diamond_tools.StrongDiamondTools;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biomes.v1.FabricBiomes;
 import net.fabricmc.fabric.api.biomes.v1.OverworldBiomes;
@@ -89,6 +90,7 @@ public class Main implements ModInitializer {
     Items.init();
     Blocks.init();
     RubyTools.init();
+    StrongDiamondTools.init();
 
     //registers Ruby Guardian and spawn egg
     FabricDefaultAttributeRegistry.register(RUBY_GUARDIAN, RubyGuardian.createMobAttributes());

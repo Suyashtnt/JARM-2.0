@@ -12,11 +12,11 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class RubyTools {
-    public static ToolItem RUBY_SWORD = register("ruby_sword", new SwordItem(RubyToolsMaterial.RUBY, 5, 7.0F, new Item.Settings().group(Main.JARM_GROUP)));
-    public static ToolItem RUBY_PICKAXE = register("ruby_pickaxe", new PickaxeSubclass(RubyToolsMaterial.RUBY, 2, 5, new Item.Settings().group(Main.JARM_GROUP)));
-    public static ToolItem RUBY_AXE = register("ruby_axe", new AxeSubclass(RubyToolsMaterial.RUBY, 9, 5, new Item.Settings().group(Main.JARM_GROUP)));
-    public static ToolItem RUBY_SHOVEL = register("ruby_shovel", new ShovelItem(RubyToolsMaterial.RUBY, 1, 1, new Item.Settings().group(Main.JARM_GROUP)));
-    public static ToolItem RUBY_HOE = register("ruby_hoe", new HoeSubclass(RubyToolsMaterial.RUBY, 1, 1, new Item.Settings().group(Main.JARM_GROUP)));
+    public static ToolItem RUBY_SWORD = register("ruby_sword", new SwordItem(RubyMaterial.RUBY, 5, 7.0F, new Item.Settings().group(Main.JARM_GROUP)));
+    public static ToolItem RUBY_PICKAXE = register("ruby_pickaxe", new PickaxeSubclass(RubyMaterial.RUBY, 2, 5, new Item.Settings().group(Main.JARM_GROUP)));
+    public static ToolItem RUBY_AXE = register("ruby_axe", new AxeSubclass(RubyMaterial.RUBY, 9, 5, new Item.Settings().group(Main.JARM_GROUP)));
+    public static ToolItem RUBY_SHOVEL = register("ruby_shovel", new ShovelItem(RubyMaterial.RUBY, 1, 1, new Item.Settings().group(Main.JARM_GROUP)));
+    public static ToolItem RUBY_HOE = register("ruby_hoe", new HoeSubclass(RubyMaterial.RUBY, 1, 1, new Item.Settings().group(Main.JARM_GROUP)));
 
     public static <T extends Item> T register(String name, T item) {
         return Registry.register(Registry.ITEM, new Identifier("jarm", name), item);

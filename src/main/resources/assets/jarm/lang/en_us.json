@@ -9,5 +9,15 @@
   "block.jarm.ruby_bricks": "Ruby Bricks",
   "block.jarm.ruby_bricks_slab": "Ruby Bricks Slab",
   "block.jarm.strong_diamond_block": "Strengthened Diamond Block",
-  "itemGroup.jarm.general": "JARM"
+  "itemGroup.jarm.general": "JARM",
+  "item.jarm.ruby_sword": "Ruby Sword",
+  "item.jarm.ruby_pickaxe": "Ruby Pickaxe",
+  "item.jarm,ruby_axe": "Ruby Axe",
+  "item.jarm.ruby_shovel": "Ruby Shovel",
+  "item.jarm.ruby_hoe": "Ruby Hoe",
+  "item.jarm.strong_diamond_sword": "Strong Diamond Sword",
+  "item.jarm.strong_diamond_pickaxe": "Strong Diamond Pickaxe",
+  "item.jarm.strong_diamond_axe": "Strong Diamond Axe",
+  "item.jarm.strong_diamond_shovel": "Strong Diamond Shovel",
+  "item.jarm.strong_ruby_hoe": "Strong Ruby Hoe"
 }
