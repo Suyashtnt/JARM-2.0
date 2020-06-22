@@ -6,6 +6,7 @@ import com.tnt_man_inc.jarm.WorldGenAndDimensions.BiomeRegister;
 import com.tnt_man_inc.jarm.WorldGenAndDimensions.RubyBiome;
 import com.tnt_man_inc.jarm.items_and_blocks.Blocks;
 import com.tnt_man_inc.jarm.items_and_blocks.Items;
+import com.tnt_man_inc.jarm.items_and_blocks.tools.ruby_tools.RubyTools;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biomes.v1.FabricBiomes;
 import net.fabricmc.fabric.api.biomes.v1.OverworldBiomes;
@@ -83,10 +84,11 @@ public class Main implements ModInitializer {
 
     // Listen for other biomes being registered
     RegistryEntryAddedCallback.event(Registry.BIOME).register((i, identifier, biome) -> handleBiomes(biome));
-
+    //inits items and blocks
     Registry.register(Registry.ITEM, new Identifier("jarm", "menu"), RUBY_ICON);
     Items.init();
     Blocks.init();
+    RubyTools.init();
 
     //registers Ruby Guardian and spawn egg
     FabricDefaultAttributeRegistry.register(RUBY_GUARDIAN, RubyGuardian.createMobAttributes());
