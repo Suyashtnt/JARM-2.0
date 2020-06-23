@@ -1,10 +1,6 @@
-package com.tnt_man_inc.jarm.items_and_blocks.tools.subclasses;
+package com.tnt_man_inc.jarm.items_and_blocks.tools.subclasses
 
-import net.minecraft.item.AxeItem;
-import net.minecraft.item.ToolMaterial;
+import net.minecraft.item.AxeItem
+import net.minecraft.item.ToolMaterial
 
-public class AxeSubclass extends AxeItem {
-    public AxeSubclass(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
-        super(material, attackDamage, attackSpeed, settings);
-    }
-}
+class AxeSubclass(material: ToolMaterial?, attackDamage: Float, attackSpeed: Float, settings: Settings?) : AxeItem(material, attackDamage, attackSpeed, settings) 

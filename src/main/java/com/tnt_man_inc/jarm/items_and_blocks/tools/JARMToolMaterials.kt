@@ -1,60 +1,40 @@
-package com.tnt_man_inc.jarm.items_and_blocks.tools;
+package com.tnt_man_inc.jarm.items_and_blocks.tools
 
-import com.tnt_man_inc.jarm.items_and_blocks.Items;
-import net.minecraft.item.ToolMaterial;
-import net.minecraft.recipe.Ingredient;
-import net.minecraft.util.Lazy;
+import com.tnt_man_inc.jarm.items_and_blocks.Items
+import net.minecraft.item.ToolMaterial
+import net.minecraft.recipe.Ingredient
+import net.minecraft.util.Lazy
+import java.util.function.Supplier
 
-import java.util.function.Supplier;
+enum class JARMToolMaterials(private val miningLevel: Int, private val itemDurability: Int, private val miningSpeed: Float, private val attackDamage: Float, private val enchantability: Int, repairIngredient: Supplier<Ingredient>) : ToolMaterial {
+    RUBY(3, 1301, 7f, 2f, 20, Supplier<Ingredient> { Ingredient.ofItems(Items.RUBY) }), STRONG_DIAMOND(3, 1301, 7f, 2.5f, 20, Supplier<Ingredient> { Ingredient.ofItems(Items.RUBY) });
 
-public enum JARMToolMaterials implements ToolMaterial {
-
-    RUBY(3, 1301, 7F, 2F, 20, () -> Ingredient.ofItems(Items.RUBY)), STRONG_DIAMOND(3, 1301, 7F, 2.5F, 20, () -> Ingredient.ofItems(Items.RUBY));
-
-
-    private final int miningLevel;
-    private final int itemDurability;
-    private final float miningSpeed;
-    private final float attackDamage;
-    private final int enchantability;
-    private final Lazy<Ingredient> repairIngredient;
-
-    JARMToolMaterials(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier<Ingredient> repairIngredient) {
-        this.miningLevel = miningLevel;
-        this.itemDurability = itemDurability;
-        this.miningSpeed = miningSpeed;
-        this.attackDamage = attackDamage;
-        this.enchantability = enchantability;
-        this.repairIngredient = new Lazy<>(repairIngredient);
+    private val repairIngredient: Lazy<Ingredient>
+    override fun getDurability(): Int {
+        return itemDurability
     }
 
-    @Override
-    public int getDurability() {
-        return this.itemDurability;
+    override fun getMiningSpeedMultiplier(): Float {
+        return miningSpeed
     }
 
-    @Override
-    public float getMiningSpeedMultiplier() {
-        return this.miningSpeed;
+    override fun getAttackDamage(): Float {
+        return attackDamage
     }
 
-    @Override
-    public float getAttackDamage() {
-        return this.attackDamage;
+    override fun getMiningLevel(): Int {
+        return miningLevel
     }
 
-    @Override
-    public int getMiningLevel() {
-        return this.miningLevel;
+    override fun getEnchantability(): Int {
+        return enchantability
     }
 
-    @Override
-    public int getEnchantability() {
-        return this.enchantability;
+    override fun getRepairIngredient(): Ingredient {
+        return repairIngredient.get()
     }
 
-    @Override
-    public Ingredient getRepairIngredient() {
-        return this.repairIngredient.get();
+    init {
+        this.repairIngredient = Lazy(repairIngredient)
     }
 }

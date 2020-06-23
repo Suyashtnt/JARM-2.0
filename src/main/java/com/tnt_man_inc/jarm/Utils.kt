@@ -18,7 +18,7 @@ object Utils {
 
     @JvmStatic
     fun <T : Item?> registerItem(name: String?, item: T): T {
-        return Registry.register(Registry.ITEM, Identifier("jarm", name), item)
+        return Registry.register(Registry.ITEM, id(name), item)
     }
 
     @JvmStatic
