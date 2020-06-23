@@ -1,85 +1,58 @@
-package com.tnt_man_inc.jarm.items_and_blocks.armor;
+package com.tnt_man_inc.jarm.items_and_blocks.armor
 
+import com.tnt_man_inc.jarm.items_and_blocks.Items
+import net.fabricmc.api.EnvType
+import net.fabricmc.api.Environment
+import net.minecraft.entity.EquipmentSlot
+import net.minecraft.item.ArmorMaterial
+import net.minecraft.recipe.Ingredient
+import net.minecraft.sound.SoundEvent
+import net.minecraft.sound.SoundEvents
+import net.minecraft.util.Lazy
+import java.util.function.Supplier
 
-import com.tnt_man_inc.jarm.items_and_blocks.Items;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.item.ArmorMaterial;
-import net.minecraft.recipe.Ingredient;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.Lazy;
+enum class JARMArmorMaterials(val id: String, private val durabilityMultiplier: Int, private val protectionAmounts: IntArray, private val enchantability: Int, private val equipSound: SoundEvent, private val toughness: Float, private val knockbackResistance: Float, supplier: Supplier<Ingredient>) : ArmorMaterial {
+    RUBY("ruby", 33, intArrayOf(2, 5, 7, 2), 22, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 1.7f, 0.0f, Supplier<Ingredient> { Ingredient.ofItems(Items.RUBY) }), STRONG_DIAMOND("strong_diamond", 40, intArrayOf(5, 8, 10, 5), 28, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 5.0f, 0.3f, Supplier<Ingredient> { Ingredient.ofItems(Items.STRONG_DIAMOND) });
 
-import java.util.function.Supplier;
+    private val repairIngredientSupplier: Lazy<Ingredient>
+    override fun getDurability(slot: EquipmentSlot): Int {
+        return BASE_DURABILITY[slot.entitySlotId] * durabilityMultiplier
+    }
 
+    override fun getProtectionAmount(slot: EquipmentSlot): Int {
+        return protectionAmounts[slot.entitySlotId]
+    }
 
-public enum JARMArmorMaterials implements ArmorMaterial {
-	RUBY("ruby", 33, new int[]{2, 5, 7, 2}, 22, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 1.7F, 0.0F, () -> {
-		return Ingredient.ofItems(Items.RUBY);
-	}), STRONG_DIAMOND("strong_diamond", 40, new int[]{5, 8, 10, 5}, 28, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 5.0F, 0.3F, () -> {
-		return Ingredient.ofItems(Items.STRONG_DIAMOND);
-	});
+    override fun getEnchantability(): Int {
+        return enchantability
+    }
 
-	private static final int[] BASE_DURABILITY = new int[]{13, 15, 16, 11};
-	private final String name;
-	private final int durabilityMultiplier;
-	private final int[] protectionAmounts;
-	private final int enchantability;
-	private final SoundEvent equipSound;
-	private final float toughness;
-	private final float knockbackResistance;
-	private final Lazy<Ingredient> repairIngredientSupplier;
+    override fun getEquipSound(): SoundEvent {
+        return equipSound
+    }
 
-	JARMArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantability, SoundEvent equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> supplier) {
-		this.name = name;
-		this.durabilityMultiplier = durabilityMultiplier;
-		this.protectionAmounts = protectionAmounts;
-		this.enchantability = enchantability;
-		this.equipSound = equipSound;
-		this.toughness = toughness;
-		this.knockbackResistance = knockbackResistance;
-		this.repairIngredientSupplier = new Lazy<>(supplier);
-	}
+    override fun getRepairIngredient(): Ingredient {
+        return repairIngredientSupplier.get()
+    }
 
-	@Override
-	public int getDurability(EquipmentSlot slot) {
-		return BASE_DURABILITY[slot.getEntitySlotId()] * this.durabilityMultiplier;
-	}
+    @Environment(EnvType.CLIENT)
+    override fun getName(): String {
+        return name
+    }
 
-	@Override
-	public int getProtectionAmount(EquipmentSlot slot) {
-		return this.protectionAmounts[slot.getEntitySlotId()];
-	}
+    override fun getToughness(): Float {
+        return toughness
+    }
 
-	@Override
-	public int getEnchantability() {
-		return this.enchantability;
-	}
+    override fun getKnockbackResistance(): Float {
+        return knockbackResistance
+    }
 
-	@Override
-	public SoundEvent getEquipSound() {
-		return this.equipSound;
-	}
+    companion object {
+        private val BASE_DURABILITY = intArrayOf(13, 15, 16, 11)
+    }
 
-	@Override
-	public Ingredient getRepairIngredient() {
-		return this.repairIngredientSupplier.get();
-	}
-
-	@Override
-	@Environment(EnvType.CLIENT)
-	public String getName() {
-		return this.name;
-	}
-
-	@Override
-	public float getToughness() {
-		return this.toughness;
-	}
-
-	@Override
-	public float getKnockbackResistance() {
-		return this.knockbackResistance;
-	}
+    init {
+        repairIngredientSupplier = Lazy(supplier)
+    }
 }
