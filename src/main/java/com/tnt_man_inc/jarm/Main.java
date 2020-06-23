@@ -34,6 +34,7 @@ import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
+import org.jetbrains.annotations.NotNull;
 
 import static com.tnt_man_inc.jarm.Utils.ITEM_SETTINGS;
 
@@ -43,27 +44,22 @@ public class Main implements ModInitializer {
       () -> new ItemStack(RUBY_ICON));
 
 
-  public void handleBiomes(final Biome biome) {
+  public void handleBiomes(final @NotNull Biome biome) {
     if (biome.getCategory() != Biome.Category.NETHER && biome.getCategory() != Biome.Category.THEEND) {
-      biome.addFeature(GenerationStep.Feature.UNDERGROUND_ORES, Feature.ORE
-              .configure(new OreFeatureConfig(OreFeatureConfig.Target.NATURAL_STONE, Blocks.RUBY_ORE.getDefaultState(), 8 // Ore
-                      // vein
-                      // size
-              )).createDecoratedFeature(Decorator.COUNT_RANGE.configure(new RangeDecoratorConfig(1, // Number of veins per
-                      // chunk
-                      0,
-                      1,
-                      18
-              ))));
+      biome.addFeature(GenerationStep.Feature.UNDERGROUND_ORES, Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Target.NATURAL_STONE, Blocks.RUBY_ORE.getDefaultState(), 8 // Ore
+              // vein
+              // size
+      )).createDecoratedFeature(Decorator.COUNT_RANGE.configure(new RangeDecoratorConfig(1, // Number of veins per
+              // chunk
+              0, 1, 18))));
 
       if (biome instanceof RubyBiome) {
-        biome.addFeature(GenerationStep.Feature.UNDERGROUND_ORES, Feature.ORE
-                .configure(new OreFeatureConfig(OreFeatureConfig.Target.NATURAL_STONE, Blocks.SPECIAL_RUBY_ORE.getDefaultState(), 8 // Ore
-                        // vein
-                        // size
-                )).createDecoratedFeature(Decorator.COUNT_RANGE.configure(new RangeDecoratorConfig(1, // Number of veins per
-                        // chunk
-                        0,
+        biome.addFeature(GenerationStep.Feature.UNDERGROUND_ORES, Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Target.NATURAL_STONE, Blocks.SPECIAL_RUBY_ORE.getDefaultState(), 8 // Ore
+                // vein
+                // size
+        )).createDecoratedFeature(Decorator.COUNT_RANGE.configure(new RangeDecoratorConfig(1, // Number of veins per
+                // chunk
+                0,
                         1,
                         18
                 ))));
