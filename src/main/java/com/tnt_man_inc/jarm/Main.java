@@ -6,6 +6,7 @@ import com.tnt_man_inc.jarm.WorldGenAndDimensions.BiomeRegister;
 import com.tnt_man_inc.jarm.WorldGenAndDimensions.RubyBiome;
 import com.tnt_man_inc.jarm.items_and_blocks.Blocks;
 import com.tnt_man_inc.jarm.items_and_blocks.Items;
+import com.tnt_man_inc.jarm.items_and_blocks.armor.ruby_armor.RubyArmor;
 import com.tnt_man_inc.jarm.items_and_blocks.tools.ruby_tools.RubyTools;
 import com.tnt_man_inc.jarm.items_and_blocks.tools.strong_diamond_tools.StrongDiamondTools;
 import net.fabricmc.api.ModInitializer;
@@ -89,8 +90,11 @@ public class Main implements ModInitializer {
     Registry.register(Registry.ITEM, new Identifier("jarm", "menu"), RUBY_ICON);
     Items.init();
     Blocks.init();
+    //init tools
     RubyTools.init();
     StrongDiamondTools.init();
+    //init armor
+    RubyArmor.init();
 
     //registers Ruby Guardian and spawn egg
     FabricDefaultAttributeRegistry.register(RUBY_GUARDIAN, RubyGuardian.createMobAttributes());
