@@ -1,9 +1,9 @@
 package com.tnt_man_inc.jarm.items_and_blocks;
 
-import com.tnt_man_inc.jarm.items_and_blocks.custom_block_types.RubyBricks;
-import com.tnt_man_inc.jarm.items_and_blocks.custom_block_types.RubyOre;
-import com.tnt_man_inc.jarm.items_and_blocks.custom_block_types.SpecialRubyOre;
-import com.tnt_man_inc.jarm.items_and_blocks.custom_block_types.StrongDiamondBlock;
+import com.tnt_man_inc.jarm.items_and_blocks.custom_types.custom_block_types.RubyBricks;
+import com.tnt_man_inc.jarm.items_and_blocks.custom_types.custom_block_types.RubyOre;
+import com.tnt_man_inc.jarm.items_and_blocks.custom_types.custom_block_types.SpecialRubyOre;
+import com.tnt_man_inc.jarm.items_and_blocks.custom_types.custom_block_types.StrongDiamondBlock;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;

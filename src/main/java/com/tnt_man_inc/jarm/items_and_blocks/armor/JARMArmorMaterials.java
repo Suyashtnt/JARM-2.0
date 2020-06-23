@@ -29,7 +29,7 @@ public enum JARMArmorMaterials implements ArmorMaterial {
 	private final SoundEvent equipSound;
 	private final float toughness;
 	private final float knockbackResistance;
-	private final Lazy repairIngredientSupplier;
+	private final Lazy<Ingredient> repairIngredientSupplier;
 
 	JARMArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantability, SoundEvent equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> supplier) {
 		this.name = name;
@@ -39,7 +39,7 @@ public enum JARMArmorMaterials implements ArmorMaterial {
 		this.equipSound = equipSound;
 		this.toughness = toughness;
 		this.knockbackResistance = knockbackResistance;
-		this.repairIngredientSupplier = new Lazy(supplier);
+		this.repairIngredientSupplier = new Lazy<>(supplier);
 	}
 
 	@Override
@@ -64,7 +64,7 @@ public enum JARMArmorMaterials implements ArmorMaterial {
 
 	@Override
 	public Ingredient getRepairIngredient() {
-		return (Ingredient) this.repairIngredientSupplier.get();
+		return this.repairIngredientSupplier.get();
 	}
 
 	@Override

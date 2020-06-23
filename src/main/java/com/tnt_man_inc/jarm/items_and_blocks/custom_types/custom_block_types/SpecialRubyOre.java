@@ -1,4 +1,4 @@
-package com.tnt_man_inc.jarm.items_and_blocks.custom_block_types;
+package com.tnt_man_inc.jarm.items_and_blocks.custom_types.custom_block_types;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
