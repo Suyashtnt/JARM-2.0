@@ -12,8 +12,7 @@ public class Items {
     public static final Item STRONG_DIAMOND = registerItem("strong_diamond", new Item(ITEM_SETTINGS.maxCount(16)));
     public static final Item RUBY_INGOT = registerItem("ruby_ingot", new Item(ITEM_SETTINGS));
     public static final Item RUBY_NUGGET = registerItem("ruby_nugget", new Item(ITEM_SETTINGS));
-    public static final Item RUBY_SHARD = registerItem("ruby_nugget", new RubyShard(ITEM_SETTINGS));
+    public static final Item RUBY_SHARD = registerItem("ruby_shard", new RubyShard(ITEM_SETTINGS));
 
-    public static void init() {
-    }
+    public static void init() {}
 }
