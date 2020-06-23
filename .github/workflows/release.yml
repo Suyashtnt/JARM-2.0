@@ -45,16 +45,3 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           files: 'build/libs/*[!-dev].jar'
 
-      - name: Upload to curseforge
-        id: upload_to_curse
-        uses: itsmeow/curseforge-upload@master
-        with:
-          token: ${{ secrets.CF_API_TOKEN }}
-          project_id: 391183
-          game_endpoint: minecraft
-          file_path: build/libs/*[!-dev].jar
-          changelog: (creator needs to make one)
-          display_name: JARM-${{ env.TAG }}
-          game_versions: 1.16-rc1, Java 8, Fabric
-          release_type: alpha
-          relations: fabric:dependency,
