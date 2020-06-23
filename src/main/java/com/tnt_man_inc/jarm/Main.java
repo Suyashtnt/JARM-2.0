@@ -7,6 +7,7 @@ import com.tnt_man_inc.jarm.WorldGenAndDimensions.RubyBiome;
 import com.tnt_man_inc.jarm.items_and_blocks.Blocks;
 import com.tnt_man_inc.jarm.items_and_blocks.Items;
 import com.tnt_man_inc.jarm.items_and_blocks.armor.ruby_armor.RubyArmor;
+import com.tnt_man_inc.jarm.items_and_blocks.armor.strong_diamond_armor.StrongDiamondArmor;
 import com.tnt_man_inc.jarm.items_and_blocks.tools.ruby_tools.RubyTools;
 import com.tnt_man_inc.jarm.items_and_blocks.tools.strong_diamond_tools.StrongDiamondTools;
 import net.fabricmc.api.ModInitializer;
@@ -33,6 +34,8 @@ import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
+
+import static com.tnt_man_inc.jarm.Utils.ITEM_SETTINGS;
 
 public class Main implements ModInitializer {
   public static final Item RUBY_ICON = new Item(new Item.Settings().group(null));
@@ -86,22 +89,24 @@ public class Main implements ModInitializer {
 
     // Listen for other biomes being registered
     RegistryEntryAddedCallback.event(Registry.BIOME).register((i, identifier, biome) -> handleBiomes(biome));
+
     //inits items and blocks
     Registry.register(Registry.ITEM, new Identifier("jarm", "menu"), RUBY_ICON);
     Items.init();
     Blocks.init();
+
     //init tools
     RubyTools.init();
     StrongDiamondTools.init();
+
     //init armor
     RubyArmor.init();
+    StrongDiamondArmor.init();
 
     //registers Ruby Guardian and spawn egg
     FabricDefaultAttributeRegistry.register(RUBY_GUARDIAN, RubyGuardian.createMobAttributes());
     FabricDefaultAttributeRegistry.register(RUBY_GUARDIAN, HostileEntity.createHostileAttributes());
-    Registry.register(Registry.ITEM, new Identifier("jarm", "ruby_guardian_spawn_egg"), new SpawnEggItem(RUBY_GUARDIAN, 0xC41F1F, 0xC41F72, new Item.Settings().group(ItemGroup.MISC)));
-
-
+    Registry.register(Registry.ITEM, new Identifier("jarm", "ruby_guardian_spawn_egg"), new SpawnEggItem(RUBY_GUARDIAN, 0xC41F1F, 0xC41F72, ITEM_SETTINGS));
     //registers it's renderer
     EntityRendererRegistry.INSTANCE.register(Main.RUBY_GUARDIAN, (dispatcher, context) -> new RubyGuardianRenderer(dispatcher));
   }

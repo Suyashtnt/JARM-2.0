@@ -7,29 +7,19 @@ import com.tnt_man_inc.jarm.items_and_blocks.custom_block_types.StrongDiamondBlo
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
-import net.minecraft.item.BlockItem;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
-import static com.tnt_man_inc.jarm.items_and_blocks.Items.ITEM_SETTINGS;
+import static com.tnt_man_inc.jarm.Utils.registerBlock;
 
 public class Blocks {
 
-    public static final Block RUBY_ORE = register("ruby_ore", new RubyOre());
-    public static final Block SPECIAL_RUBY_ORE = register("special_ruby_ore", new SpecialRubyOre());
+    public static final Block RUBY_ORE = registerBlock("ruby_ore", new RubyOre());
+    public static final Block SPECIAL_RUBY_ORE = registerBlock("special_ruby_ore", new SpecialRubyOre());
 
-    public static final Block RUBY_BLOCK = register("block_of_ruby",
-            new Block(FabricBlockSettings.of(Material.METAL).hardness(4.0f)));
-    public static final Block RUBY_BRICK = register("ruby_bricks", new RubyBricks());
-    public static final Block RUBY_BRICK_SLAB = register("ruby_bricks_slab", new RubyBricks());
-    public static final Block STRONG_DIAMOND_BLOCK = register("strong_diamond_block", new StrongDiamondBlock());
-    public static final Block RUBY_INGOT_BLOCK = register("block_of_ruby_ingot", new Block(FabricBlockSettings.of(Material.METAL).hardness(4.0f)));
-
-    public static <T extends Block> T register(String name, T Block) {
-        Registry.register(Registry.ITEM, new Identifier("jarm", name), new BlockItem(Block, ITEM_SETTINGS));
-        return Registry.register(Registry.BLOCK, new Identifier("jarm", name), Block);
-
-    }
+    public static final Block RUBY_BLOCK = registerBlock("block_of_ruby", new Block(FabricBlockSettings.of(Material.METAL).hardness(4.0f)));
+    public static final Block RUBY_BRICK = registerBlock("ruby_bricks", new RubyBricks());
+    public static final Block RUBY_BRICK_SLAB = registerBlock("ruby_bricks_slab", new RubyBricks());
+    public static final Block STRONG_DIAMOND_BLOCK = registerBlock("strong_diamond_block", new StrongDiamondBlock());
+    public static final Block RUBY_INGOT_BLOCK = registerBlock("block_of_ruby_ingot", new Block(FabricBlockSettings.of(Material.METAL).hardness(4.0f)));
 
     public static void init() {
     }
