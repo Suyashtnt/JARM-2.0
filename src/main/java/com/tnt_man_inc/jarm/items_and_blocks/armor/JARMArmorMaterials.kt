@@ -12,9 +12,10 @@ import net.minecraft.util.Lazy
 import java.util.function.Supplier
 
 enum class JARMArmorMaterials(val id: String, private val durabilityMultiplier: Int, private val protectionAmounts: IntArray, private val enchantability: Int, private val equipSound: SoundEvent, private val toughness: Float, private val knockbackResistance: Float, supplier: Supplier<Ingredient>) : ArmorMaterial {
-    RUBY("ruby", 33, intArrayOf(2, 5, 7, 2), 22, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 1.7f, 0.0f, Supplier<Ingredient> { Ingredient.ofItems(Items.RUBY) }), STRONG_DIAMOND("strong_diamond", 40, intArrayOf(5, 8, 10, 5), 28, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 5.0f, 0.3f, Supplier<Ingredient> { Ingredient.ofItems(Items.STRONG_DIAMOND) });
+    RUBY("RUBY", 33, intArrayOf(2, 5, 7, 2), 22, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 1.7f, 0.0f, Supplier<Ingredient> { Ingredient.ofItems(Items.RUBY) }),
+    STRONG_DIAMOND("strong_diamond", 40, intArrayOf(5, 8, 10, 5), 28, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 5.0f, 0.3f, Supplier<Ingredient> { Ingredient.ofItems(Items.STRONG_DIAMOND) });
 
-    private val repairIngredientSupplier: Lazy<Ingredient>
+    private val repairIngredientSupplier: Lazy<Ingredient> = Lazy(supplier)
     override fun getDurability(slot: EquipmentSlot): Int {
         return BASE_DURABILITY[slot.entitySlotId] * durabilityMultiplier
     }
@@ -37,7 +38,7 @@ enum class JARMArmorMaterials(val id: String, private val durabilityMultiplier: 
 
     @Environment(EnvType.CLIENT)
     override fun getName(): String {
-        return name
+        return id
     }
 
     override fun getToughness(): Float {
@@ -52,7 +53,4 @@ enum class JARMArmorMaterials(val id: String, private val durabilityMultiplier: 
         private val BASE_DURABILITY = intArrayOf(13, 15, 16, 11)
     }
 
-    init {
-        repairIngredientSupplier = Lazy(supplier)
-    }
 }

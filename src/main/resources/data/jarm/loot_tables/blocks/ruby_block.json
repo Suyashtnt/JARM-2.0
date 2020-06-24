@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "jarm:block_of_ruby"
+          "name": "jarm:ruby_block"
         }
       ],
       "conditions": [
