@@ -7,9 +7,11 @@ import net.minecraft.util.Lazy
 import java.util.function.Supplier
 
 enum class JARMToolMaterials(private val miningLevel: Int, private val itemDurability: Int, private val miningSpeed: Float, private val attackDamage: Float, private val enchantability: Int, repairIngredient: Supplier<Ingredient>) : ToolMaterial {
-    RUBY(3, 1301, 7f, 2f, 20, Supplier<Ingredient> { Ingredient.ofItems(Items.RUBY) }), STRONG_DIAMOND(3, 1301, 7f, 2.5f, 20, Supplier<Ingredient> { Ingredient.ofItems(Items.RUBY) });
+    RUBY(3, 1301, 7f, 2f, 20, Supplier<Ingredient> { Ingredient.ofItems(Items.RUBY) }),
+    STRONG_DIAMOND(3, 1301, 7f, 2.5f, 20, Supplier<Ingredient> { Ingredient.ofItems(Items.RUBY) }),
+    NETHERITE_INFUSED_STRONG_GUILDED_DIAMOND(4, 6942, 12f, 4f, 45, Supplier<Ingredient> { Ingredient.ofItems(Items.NETHERITE_INFUSED_STRONG_GUILDED_DIAMOND) });
 
-    private val repairIngredient: Lazy<Ingredient> = Lazy(repairIngredient)
+    val repairIngredient: Lazy<Ingredient> = Lazy(repairIngredient)
     override fun getDurability(): Int {
         return itemDurability
     }

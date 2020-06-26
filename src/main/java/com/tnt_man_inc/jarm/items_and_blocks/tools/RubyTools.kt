@@ -1,8 +1,7 @@
-package com.tnt_man_inc.jarm.items_and_blocks.tools.ruby_tools
+package com.tnt_man_inc.jarm.items_and_blocks.tools
 
 import com.tnt_man_inc.jarm.Utils.ITEM_SETTINGS
 import com.tnt_man_inc.jarm.Utils.registerItem
-import com.tnt_man_inc.jarm.items_and_blocks.tools.JARMToolMaterials
 import com.tnt_man_inc.jarm.items_and_blocks.tools.subclasses.AxeSubclass
 import com.tnt_man_inc.jarm.items_and_blocks.tools.subclasses.HoeSubclass
 import com.tnt_man_inc.jarm.items_and_blocks.tools.subclasses.PickaxeSubclass

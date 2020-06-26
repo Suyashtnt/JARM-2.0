@@ -1,7 +1,6 @@
-package com.tnt_man_inc.jarm.items_and_blocks.tools.strong_diamond_tools
+package com.tnt_man_inc.jarm.items_and_blocks.tools
 
 import com.tnt_man_inc.jarm.Main
-import com.tnt_man_inc.jarm.items_and_blocks.tools.JARMToolMaterials
 import com.tnt_man_inc.jarm.items_and_blocks.tools.subclasses.PickaxeSubclass
 import net.minecraft.item.Item
 import net.minecraft.item.SwordItem

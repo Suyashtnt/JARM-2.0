@@ -8,9 +8,9 @@ import net.minecraft.item.ArmorItem
 import net.minecraft.item.Item
 
 object RubyArmor {
-    val RUBY_HELMET: Item = registerItem("ruby_helmet", ArmorItem(JARMArmorMaterials.RUBY, EquipmentSlot.HEAD, ITEM_SETTINGS))
-    val RUBY_CHESTPLATE: Item = registerItem("ruby_chestplate", ArmorItem(JARMArmorMaterials.RUBY, EquipmentSlot.CHEST, ITEM_SETTINGS))
-    val RUBY_LEGGINGS: Item = registerItem("ruby_leggings", ArmorItem(JARMArmorMaterials.RUBY, EquipmentSlot.LEGS, ITEM_SETTINGS))
-    val RUBY_BOOTS: Item = registerItem("ruby_boots", ArmorItem(JARMArmorMaterials.RUBY, EquipmentSlot.FEET, ITEM_SETTINGS))
+    val RUBY_HELMET: Item = registerItem("ruby_helmet", ArmorItem(JARMArmorMaterials.RUBY, EquipmentSlot.HEAD, ITEM_SETTINGS.fireproof()))
+    val RUBY_CHESTPLATE: Item = registerItem("ruby_chestplate", ArmorItem(JARMArmorMaterials.RUBY, EquipmentSlot.CHEST, ITEM_SETTINGS.fireproof()))
+    val RUBY_LEGGINGS: Item = registerItem("ruby_leggings", ArmorItem(JARMArmorMaterials.RUBY, EquipmentSlot.LEGS, ITEM_SETTINGS.fireproof()))
+    val RUBY_BOOTS: Item = registerItem("ruby_boots", ArmorItem(JARMArmorMaterials.RUBY, EquipmentSlot.FEET, ITEM_SETTINGS.fireproof()))
     fun init() {}
 }

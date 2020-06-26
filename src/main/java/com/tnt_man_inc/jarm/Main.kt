@@ -8,8 +8,8 @@ import com.tnt_man_inc.jarm.items_and_blocks.Blocks
 import com.tnt_man_inc.jarm.items_and_blocks.Items
 import com.tnt_man_inc.jarm.items_and_blocks.armor.ruby_armor.RubyArmor
 import com.tnt_man_inc.jarm.items_and_blocks.armor.strong_diamond_armor.StrongDiamondArmor
-import com.tnt_man_inc.jarm.items_and_blocks.tools.ruby_tools.RubyTools
-import com.tnt_man_inc.jarm.items_and_blocks.tools.strong_diamond_tools.StrongDiamondTools
+import com.tnt_man_inc.jarm.items_and_blocks.tools.RubyTools
+import com.tnt_man_inc.jarm.items_and_blocks.tools.StrongDiamondTools
 import fudge.Entrypoint
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.`object`.builder.v1.entity.FabricDefaultAttributeRegistry

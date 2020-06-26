@@ -14,5 +14,6 @@ object Items {
     val RUBY_INGOT = registerItem("ruby_ingot", Item(ITEM_SETTINGS))
     val RUBY_NUGGET = registerItem("ruby_nugget", Item(ITEM_SETTINGS))
     val RUBY_SHARD: Item = registerItem("ruby_shard", RubyShard(ITEM_SETTINGS))
+    val NETHERITE_INFUSED_STRONG_GUILDED_DIAMOND = registerItem("netherite_infused_strong_guilded_diamond", Item(ITEM_SETTINGS))
     fun init() {}
 }
