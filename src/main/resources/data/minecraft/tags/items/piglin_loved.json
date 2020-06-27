@@ -1,6 +1,15 @@
 {
   "replace": false,
   "values": [
-    "jarm:netherite_infused_strong_guilded_diamond"
+    "jarm:netherite_infused_strong_guilded_diamond",
+    "jarm:netherite_infused_strong_guilded_diamond_sword",
+    "jarm:netherite_infused_strong_guilded_diamond_pickaxe",
+    "jarm:netherite_infused_strong_guilded_diamond_axe",
+    "jarm:netherite_infused_strong_guilded_diamond_shovel",
+    "jarm:netherite_infused_strong_guilded_diamond_hoe",
+    "jarm:netherite_infused_strong_guilded_diamond_helmet",
+    "jarm:netherite_infused_strong_guilded_diamond_chestplate",
+    "jarm:netherite_infused_strong_guilded_diamond_leggings",
+    "jarm:netherite_infused_strong_guilded_diamond_boots"
   ]
 }

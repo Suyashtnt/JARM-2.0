@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "jarm:items/strengthendarmor_leggings"
+    "layer0": "jarm:items/strong_diamond_leggings"
   }
 }

@@ -6,11 +6,12 @@ import com.tnt_man_inc.jarm.WorldGenAndDimensions.BiomeRegister
 import com.tnt_man_inc.jarm.WorldGenAndDimensions.RubyBiome
 import com.tnt_man_inc.jarm.items_and_blocks.Blocks
 import com.tnt_man_inc.jarm.items_and_blocks.Items
-import com.tnt_man_inc.jarm.items_and_blocks.armor.ruby_armor.RubyArmor
+import com.tnt_man_inc.jarm.items_and_blocks.armor.NetheriteInfusedStrongGuildedDiamondArmor
+import com.tnt_man_inc.jarm.items_and_blocks.armor.RubyArmor
 import com.tnt_man_inc.jarm.items_and_blocks.armor.strong_diamond_armor.StrongDiamondArmor
+import com.tnt_man_inc.jarm.items_and_blocks.tools.NetheriteInfusedStrongGuildedDiamondTools
 import com.tnt_man_inc.jarm.items_and_blocks.tools.RubyTools
 import com.tnt_man_inc.jarm.items_and_blocks.tools.StrongDiamondTools
-import fudge.Entrypoint
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.`object`.builder.v1.entity.FabricDefaultAttributeRegistry
 import net.fabricmc.fabric.api.`object`.builder.v1.entity.FabricEntityTypeBuilder
@@ -39,7 +40,7 @@ import net.minecraft.world.gen.feature.Feature
 import net.minecraft.world.gen.feature.OreFeatureConfig
 import java.util.function.Consumer
 
-@Entrypoint("main")
+
 class Main : ModInitializer {
     private fun handleBiomes(biome: Biome) {
         if (biome.category != Biome.Category.NETHER && biome.category != Biome.Category.THEEND) {
@@ -73,17 +74,19 @@ class Main : ModInitializer {
         RegistryEntryAddedCallback.event(Registry.BIOME).register(RegistryEntryAddedCallback { _: Int, _: Identifier?, biome: Biome -> handleBiomes(biome) })
 
         //inits items and blocks
-        Registry.register(Registry.ITEM, Identifier("jarm", "menu"), RUBY_ICON)
+        Utils.registerItem("menu", RUBY_ICON)
         Items.init()
         Blocks.init()
 
         //init tools
         RubyTools.init()
         StrongDiamondTools.init()
+        NetheriteInfusedStrongGuildedDiamondTools.init()
 
         //init armor
         RubyArmor.init()
         StrongDiamondArmor.init()
+        NetheriteInfusedStrongGuildedDiamondArmor.init()
 
         //registers Ruby Guardian and spawn egg
         FabricDefaultAttributeRegistry.register(RUBY_GUARDIAN, HostileEntity.createHostileAttributes())

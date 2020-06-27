@@ -1,4 +1,4 @@
-package com.tnt_man_inc.jarm.items_and_blocks.armor.ruby_armor
+package com.tnt_man_inc.jarm.items_and_blocks.armor
 
 import com.tnt_man_inc.jarm.Utils.ITEM_SETTINGS
 import com.tnt_man_inc.jarm.Utils.registerItem

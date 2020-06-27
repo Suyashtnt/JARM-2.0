@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "jarm:items/netherite_infused_strong_guilded_diamond_shovel"
+  }
+}

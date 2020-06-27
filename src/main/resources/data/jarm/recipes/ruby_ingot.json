@@ -3,7 +3,7 @@
   "type": "minecraft:stonecutting",
   "count": 1,
   "ingredient": {
-    "item": "jarm:block_of_ruby"
+    "item": "jarm:ruby_block"
   },
   "result": "jarm:ruby_ingot"
 }

@@ -7,7 +7,7 @@ import net.minecraft.item.Item
 
 object Items {
     @JvmField
-    val RUBY = registerItem("RUBY", Item(ITEM_SETTINGS))
+    val RUBY = registerItem("ruby", Item(ITEM_SETTINGS))
 
     @JvmField
     val STRONG_DIAMOND = registerItem("strong_diamond", Item(ITEM_SETTINGS.maxCount(16)))

@@ -18,10 +18,12 @@
   "icon": "assets/jarm/icon.png",
   "environment": "*",
   "entrypoints": {
-
-  },
-  "requires": {
-    "fabric-language-kotlin": ">=1.3.50"
+    "main": [
+      {
+        "adapter": "kotlin",
+        "value": "com.tnt_man_inc.jarm.Main"
+      }
+    ]
   },
   "mixins": [
   ],
@@ -33,5 +35,12 @@
   },
   "suggests": {
     "flamingo": "*"
+  },
+  "custom": {
+    "modupdater": {
+      "strategy": "github",
+      "owner": "SuyashTNT",
+      "repository": "JARM-2.0"
+    }
   }
 }
