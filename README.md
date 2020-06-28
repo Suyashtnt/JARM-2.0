@@ -2,6 +2,13 @@
 #### Fully recoded from scratch _without_ using MCreator
 JARM 2.0 is JARM but for fabric, a lot of blocks are not present as its still in beta
 
+## Where to get it
+### Curseforge
+You can get it from [curseforge](https://www.curseforge.com/minecraft/mc-mods/jarm-fabric-edition)(which is recomended as the creator get CF points to allow further development of the mod), this also supports [modupdater](https://gitea.thebrokenrail.com/TheBrokenRail/ModUpdater.git) so whenever a new version is released it will aoutmatically download and installs the latest for you.
+
+### Github
+You can also use the builds from github directly via releases.
+
 ## how to build
 1. download or clone source
 2. open a terminal or cmd and run `gradlew build`
