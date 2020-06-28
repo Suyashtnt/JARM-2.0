@@ -45,5 +45,10 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           files: 'build/libs/*[!-dev].jar'
 
+      -name: publish to GPR
+        run: gradle publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
 
