@@ -12,7 +12,7 @@ import net.minecraft.util.Lazy
 import java.util.function.Supplier
 
 enum class JARMArmorMaterials(val id: String, private val durabilityMultiplier: Int, private val protectionAmounts: IntArray, private val enchantability: Int, private val equipSound: SoundEvent, private val toughness: Float, private val knockbackResistance: Float, supplier: Supplier<Ingredient>) : ArmorMaterial {
-    RUBY("RUBY", 33, intArrayOf(2, 5, 7, 2), 22, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 1.7f, 0.0f, Supplier<Ingredient> { Ingredient.ofItems(Items.RUBY) }),
+    RUBY("ruby", 33, intArrayOf(2, 5, 7, 2), 22, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 1.7f, 0.0f, Supplier<Ingredient> { Ingredient.ofItems(Items.RUBY) }),
     STRONG_DIAMOND("strong_diamond", 40, intArrayOf(5, 8, 10, 5), 28, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 5.0f, 0.3f, Supplier<Ingredient> { Ingredient.ofItems(Items.STRONG_DIAMOND) }),
     NETHERITE_INFUSED_STRONG_GUILED_DIAMOND("netherite_infused_strong_guilded_diamond", 69, intArrayOf(8, 12, 14, 8), 45, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 9.0f, 1f, Supplier<Ingredient> { Ingredient.ofItems(Items.NETHERITE_INFUSED_STRONG_GUILDED_DIAMOND) });
 
