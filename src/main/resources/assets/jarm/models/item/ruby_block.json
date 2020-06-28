@@ -1,5 +1,5 @@
 {
-  "parent": "jarm:block/block_of_ruby",
+  "parent": "jarm:block/ruby_block",
   "display": {
     "thirdperson": {
       "rotation": [
