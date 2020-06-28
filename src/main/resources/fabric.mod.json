@@ -23,6 +23,12 @@
         "adapter": "kotlin",
         "value": "com.tnt_man_inc.jarm.Main"
       }
+    ],
+    "client": [
+      {
+        "adapter": "kotlin",
+        "value": "com.tnt_man_inc.jarm.ClientInit"
+      }
     ]
   },
   "mixins": [

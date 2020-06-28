@@ -90,9 +90,14 @@ class Main : ModInitializer {
 
         //registers Ruby Guardian and spawn egg
         FabricDefaultAttributeRegistry.register(RUBY_GUARDIAN, HostileEntity.createHostileAttributes())
-        Registry.register(Registry.ITEM, Identifier("jarm", "ruby_guardian_spawn_egg"), SpawnEggItem(RUBY_GUARDIAN, 0xC41F1F, 0xC41F72, Utils.ITEM_SETTINGS))
+        Registry.register(Registry.ITEM, Identifier("jarm", "ruby_guardian_spawn_egg"), SpawnEggItem(RUBY_GUARDIAN, 0xC41F1F, 0xC41F72, Utils.ITEM_SETTINGS()))
         //registers it's renderer
         EntityRendererRegistry.INSTANCE.register(RUBY_GUARDIAN) { dispatcher: EntityRenderDispatcher?, _: EntityRendererRegistry.Context? -> RubyGuardianRenderer(dispatcher) }
+
+        //registers techreborn stuff if mod is present
+        if (net.fabricmc.loader.api.FabricLoader.getInstance().isModLoaded("techreborn")) {
+            TechRebornLoader.init()
+        }
     }
 
     companion object {

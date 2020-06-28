@@ -35,8 +35,8 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 
-	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
-	// You may need to force-disable transitiveness on them.
+	// techreborn
+	modImplementation 'TechReborn:TechReborn-1.16:3.4.2+build.48'
 }
 
 processResources {
@@ -102,6 +102,13 @@ repositories {
 		url = "http://maven.fabricmc.net/"
 		name = "Fabric"
 	}
+
+	maven {
+		url = "http://maven.modmuss50.me/"
+		name = "Fabric2"
+	}
+
+	maven { url 'https://jitpack.io' }
 }
 compileKotlin {
     kotlinOptions {
