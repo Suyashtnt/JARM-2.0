@@ -5,8 +5,4 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-  - package-ecosystem: "github-actions"
-    directory: "/.github/workflows"
-    # Check for updates once a week
-    schedule:
-      interval: "monthly"
+
