@@ -2,20 +2,11 @@
   "group": "jarm",
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "0 2",
-    "3 5"
+    "0 0",
+    "0 0"
   ],
   "key": {
     "0": {
-      "item": "jarm:ruby"
-    },
-    "2": {
-      "item": "jarm:ruby"
-    },
-    "3": {
-      "item": "jarm:ruby"
-    },
-    "5": {
       "item": "jarm:ruby"
     }
   },

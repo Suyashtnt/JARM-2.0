@@ -4,16 +4,13 @@
   "pattern": [
     "0",
     "1",
-    "2"
+    "1"
   ],
   "key": {
     "0": {
       "item": "jarm:ruby"
     },
     "1": {
-      "item": "minecraft:stick"
-    },
-    "2": {
       "item": "minecraft:stick"
     }
   },

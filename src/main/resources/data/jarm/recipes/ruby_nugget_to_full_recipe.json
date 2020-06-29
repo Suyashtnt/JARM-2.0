@@ -2,36 +2,12 @@
   "group": "jarm",
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "012",
-    "345",
-    "678"
+    "000",
+    "000",
+    "000"
   ],
   "key": {
     "0": {
-      "item": "jarm:ruby_nugget"
-    },
-    "1": {
-      "item": "jarm:ruby_nugget"
-    },
-    "2": {
-      "item": "jarm:ruby_nugget"
-    },
-    "3": {
-      "item": "jarm:ruby_nugget"
-    },
-    "4": {
-      "item": "jarm:ruby_nugget"
-    },
-    "5": {
-      "item": "jarm:ruby_nugget"
-    },
-    "6": {
-      "item": "jarm:ruby_nugget"
-    },
-    "7": {
-      "item": "jarm:ruby_nugget"
-    },
-    "8": {
       "item": "jarm:ruby_nugget"
     }
   },

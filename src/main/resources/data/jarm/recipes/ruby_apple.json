@@ -3,15 +3,19 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "000",
-    "0 0"
+    "010",
+    "000"
   ],
   "key": {
     "0": {
-      "item": "jarm:strengthend_diamond"
+      "item": "jarm:ruby"
+    },
+    "1": {
+      "item": "minecraft:apple"
     }
   },
   "result": {
-    "item": "jarm:strengthend_armor_armorhelmet",
+    "item": "jarm:ruby_apple",
     "count": 1
   }
 }
