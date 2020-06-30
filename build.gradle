@@ -192,26 +192,18 @@ curseforge {
 publishing {
 	// select the repositories you want to publish to
 	repositories {
-		maven {
-			name = "GitHubPackages"
-			url = uri("https://maven.pkg.github.com/Suyashtnt/JARM-2.0")
-			credentials {
-				username = project.findProperty("gpr.user") ?: ENV.USERNAME
-				password = project.findProperty("gpr.key") ?: ENV.TOKEN
-			}
-		}
+
 	}
 
 	publications {
-		gpr(MavenPublication) {
-			// add all the jars that should be included when publishing to maven
+
 			artifact(remapJar) {
 				builtBy remapJar
 			}
 			artifact(sourcesJar) {
 				builtBy remapSourcesJar
 			}
-		}
+
 	}
 
 
