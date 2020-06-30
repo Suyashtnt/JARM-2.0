@@ -40,5 +40,10 @@
   "item.jarm.netherite_infused_strong_guilded_diamond_pickaxe": "Netherite Infused Strong Guilded Diamond Pickaxe",
   "item.jarm.netherite_infused_strong_guilded_diamond_axe": "Netherite Infused Strong Guilded Diamond Axe",
   "item.jarm.netherite_infused_strong_guilded_diamond_shovel": "Netherite Infused Strong Guilded Diamond Shovel",
-  "item.jarm.netherite_infused_strong_guilded_diamond_hoe": "Netherite Infused Strong Guilded Diamond Hoe"
+  "item.jarm.netherite_infused_strong_guilded_diamond_hoe": "Netherite Infused Strong Guilded Diamond Hoe",
+  "item.jarm.ruby_apple": "Ruby Apple",
+  "item.jarm.enchanted_ruby_apple": "Enchanted Ruby Apple",
+  "item.jarm.netherite_infused_strong_guilded_diamond_apple": "Netherite Infused Strong Guilded Diamond Apple",
+  "item.jarm.enchanted_netherite_infused_strong_guilded_diamond_apple": "Enchanted Netherite Infused Strong Guilded Diamond Apple",
+  "item.jarm.ruby_liquid_bucket": "Bucket of ruby liquid"
 }

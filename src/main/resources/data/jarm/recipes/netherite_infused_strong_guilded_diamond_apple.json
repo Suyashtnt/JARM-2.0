@@ -1,0 +1,17 @@
+{
+  "group": "jarm",
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["000", "010", "000"],
+  "key": {
+    "0": {
+      "item": "jarm:netherite_infused_strong_guilded_diamond"
+    },
+    "1": {
+      "item": "minecraft:apple"
+    }
+  },
+  "result": {
+    "item": "jarm:netherite_infused_strong_guilded_diamond_apple",
+    "count": 1
+  }
+}
