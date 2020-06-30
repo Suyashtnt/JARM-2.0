@@ -1,13 +1,15 @@
 {
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
   "display": {
-    "icon": {
-      "item": "jarm:strong_diamond"
-    },
     "title": {
-      "translate": "advancements.stronger_than_diamond.title"
+      "text": "Stronger Than Diamond",
+      "color": "blue"
     },
     "description": {
-      "translate": "advancements.stronger_than_diamond.desc"
+      "text": "Make a Strong diamond"
+    },
+    "icon": {
+      "item": "minecraft:stone"
     },
     "frame": "task",
     "show_toast": true,
@@ -15,12 +17,20 @@
     "hidden": false
   },
   "criteria": {
-    "stronger_than_diamond": {
-      "trigger": "minecraft:impossible"
+    "Made one": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "jarm:strong_diamond",
+            "count": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      }
     }
   },
-  "rewards": {
-    "experience": 1
-  },
-  "parent": "jarm:almost_like_diamond"
+  "parent": "adventure:almost_like_diamond"
 }

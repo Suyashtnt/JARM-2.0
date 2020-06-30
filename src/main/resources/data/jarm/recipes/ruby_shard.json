@@ -1,0 +1,14 @@
+{
+  "group": "jarm",
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["0"],
+  "key": {
+    "0": {
+      "item": "jarm:ruby_nugget"
+    }
+  },
+  "result": {
+    "item": "jarm:ruby_shard",
+    "count": 9
+  }
+}

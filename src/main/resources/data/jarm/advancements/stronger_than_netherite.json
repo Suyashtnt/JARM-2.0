@@ -2,29 +2,27 @@
   "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
   "display": {
     "title": {
-      "text": "Almost like diamond",
-      "color": "red",
-      "obfuscated": false
+      "text": "Stronger than netherite",
+      "color": "black"
     },
     "description": {
-      "text": "Get your first ruby"
+      "text": "Craft a netherite infused strong gulded diamond"
     },
     "icon": {
-      "item": "jarm:ruby"
+      "item": "jarm:netherite_infused_strong_guilded_diamond_block"
     },
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
-    "hidden": false,
-    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+    "hidden": false
   },
   "criteria": {
-    "Gotten ruby": {
+    "create": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "jarm:ruby",
+            "item": "jarm:netherite_infused_strong_guilded_diamond",
             "count": {
               "min": 1,
               "max": 1
@@ -33,5 +31,6 @@
         ]
       }
     }
-  }
+  },
+  "parent": "adventure:stronger_than_diamond"
 }

@@ -1,21 +1,17 @@
 {
   "group": "jarm",
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "000",
-    " 1 ",
-    " 1 "
-  ],
+  "pattern": ["0", "0", "1"],
   "key": {
     "0": {
-      "item": "jarm:ruby"
+      "item": "jarm:strong_diamond"
     },
     "1": {
       "item": "minecraft:stick"
     }
   },
   "result": {
-    "item": "jarm:ruby_tools_pickaxe",
+    "item": "jarm:strong_diamond_sword",
     "count": 1
   }
 }

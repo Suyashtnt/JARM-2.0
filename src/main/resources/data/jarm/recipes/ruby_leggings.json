@@ -1,21 +1,14 @@
 {
   "group": "jarm",
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "00",
-    " 1",
-    " 1"
-  ],
+  "pattern": ["000", "0 0", "0 0"],
   "key": {
     "0": {
       "item": "jarm:ruby"
-    },
-    "1": {
-      "item": "minecraft:stick"
     }
   },
   "result": {
-    "item": "jarm:ruby_tools_hoe",
+    "item": "jarm:ruby_leggings",
     "count": 1
   }
 }

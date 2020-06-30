@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:diamond_axe"
+  },
+  "addition": {
+    "item": "jarm:netherite_infused_strong_guilded_diamond"
+  },
+  "result": {
+    "item": "jarm:netherite_infused_strong_guilded_diamond_axe"
+  }
+}

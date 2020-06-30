@@ -1,8 +1,12 @@
+import java.text.SimpleDateFormat
+
 plugins {
 	id 'fabric-loom' version '0.4-SNAPSHOT'
 	id 'maven-publish'
 	id "com.github.fudge.autofabric" version "1.1.1"
-    id 'org.jetbrains.kotlin.jvm' version '1.3.72'
+  id 'org.jetbrains.kotlin.jvm' version '1.3.72'
+	id 'com.matthewprenger.cursegradle' version '1.4.0'
+	id("net.corda.plugins.jar-filter") version("5.0.8") apply false
 }
 
 
@@ -36,6 +40,34 @@ dependencies {
 
 	// techreborn
 	modImplementation 'TechReborn:TechReborn-1.16:3.4.2+build.48'
+
+    // nice things for development but are not libs
+    modRuntime "me.shedaniel:RoughlyEnoughItems:4.5.5"
+
+
+	afterEvaluate {
+		def listAdded = new ArrayList(Arrays.asList((api_exculde as String).split(',')))
+		def eachDep = { dep ->
+			for (apiIncludeDepStr in (api_include as String).split(',')) {
+				if (apiIncludeDepStr.isEmpty()) continue
+				def apiIncludeGroup = apiIncludeDepStr.split(':')[0]
+				def apiIncludeDep = apiIncludeDepStr.split(':')[1]
+				if (dep.module.id.group == apiIncludeGroup && dep.module.id.name.startsWith(apiIncludeDep)) {
+					def version = dep.module.id.version.indexOf('@') >= 0 ? dep.module.id.version.substring(0, dep.module.id.version.indexOf('@')) : dep.module.id.version
+					def mavenDep = "${dep.module.id.group}:${dep.module.id.name}:$version"
+					if (!(mavenDep in listAdded)) {
+						include(mavenDep) {
+							transitive = false
+						}
+						listAdded.add(mavenDep)
+					}
+					break
+				}
+			}
+		}
+		configurations.compile.resolvedConfiguration.firstLevelModuleDependencies.each eachDep
+		configurations.runtimeClasspath.resolvedConfiguration.firstLevelModuleDependencies.each eachDep
+	}
 }
 
 processResources {
@@ -70,8 +102,106 @@ jar {
 	from "LICENSE"
 }
 
+
+task jarFilter(type: net.corda.gradle.jarfilter.JarFilterTask) {
+	jars remapJar
+	annotations {
+		forRemove = [
+				"org.jetbrains.annotations.NotNull",
+				"org.jetbrains.annotations.Nullable",
+				"org.jetbrains.annotations.ApiStatus\$Experimental",
+				"org.jetbrains.annotations.ApiStatus\$Internal",
+				"org.jetbrains.annotations.ApiStatus\$ScheduledForRemoval",
+				"org.jetbrains.annotations.ApiStatus\$AvailableSince",
+				"org.jetbrains.annotations.ApiStatus\$NonExtendable",
+				"org.jetbrains.annotations.ApiStatus\$OverrideOnly"
+		]
+	}
+}
+
+task copyJarFilter(type: Copy) {
+	from jarFilter
+	into "${project.buildDir}/filtered-libs/"
+	rename { "${project.archivesBaseName}-${project.version}.jar" }
+}
+
+def releaseChangelog = "No changelog"
+task releaseOnCf {
+	def df = new SimpleDateFormat("yyyy-MM-dd HH:mm")
+	df.setTimeZone(TimeZone.getTimeZone("UTC"))
+	def branch
+	if (System.env.BRANCH_NAME) {
+		branch = System.env.BRANCH_NAME
+		branch = branch.substring(branch.lastIndexOf("/") + 1)
+	} else {
+		branch = "git rev-parse --abbrev-ref HEAD".execute().in.text.trim()
+	}
+	if (branch == "HEAD") {
+		branch = "git rev-parse --short HEAD".execute().in.text.trim()
+	}
+	def time = df.format(new Date())
+	def changes = new StringBuilder()
+	changes << "<h2>REI v$project.version for $project.supported_version</h2>Updated at <b>$time</b>.<br><a href=\"https://www.github.com/suyashtnt/JARM-2.0/commits/$branch\">Click here for changelog</a>"
+	def proc = "git log --max-count=200 --pretty=format:%s".execute()
+	proc.in.eachLine { line ->
+		def processedLine = line.toString()
+		if (!processedLine.contains("New translations") && !processedLine.contains("Merge") && !processedLine.contains("branch")) {
+			changes << "<br>- ${processedLine.capitalize()}"
+		}
+	}
+	proc.waitFor()
+	releaseChangelog = changes.toString()
+	dependsOn tasks.getByName("curseforge")
+}
+
+curseforge {
+	if (project.hasProperty('CF_API_KEY') || System.getenv('CF_API_KEY') != null) {
+		apiKey = project.hasProperty('CF_API_KEY') ? project.property('CF_API_KEY') : System.getenv('CF_API_KEY')
+		project {
+			id = "391183"
+			releaseType = "beta"
+			changelogType = "html"
+			changelog = releaseChangelog
+			addGameVersion "1.16-Snapshot"
+			addGameVersion "1.16"
+			addGameVersion "1.16.1"
+			addGameVersion "Java 8"
+			addGameVersion "Fabric"
+			relations {
+				requiredDependency "fabric-api"
+				requiredDependency "fabric-language-kotlin"
+			}
+			mainArtifact(file("${project.buildDir}/filtered-libs/${project.archivesBaseName}-${project.version}.jar")) {
+				displayName = "[Fabric $project.supported_version] v$project.version"
+			}
+			addArtifact(file("${project.buildDir}/libs/${project.archivesBaseName}-${project.version}-sources.jar")) {
+				displayName = "[Fabric $project.supported_version] v$project.version Sources"
+			}
+			afterEvaluate {
+				uploadTask.dependsOn("copyJarFilter")
+			}
+		}
+	}
+	options {
+		forgeGradleIntegration = false
+		javaVersionAutoDetect = false
+	}
+}
+
 // configure the maven publication
 publishing {
+	// select the repositories you want to publish to
+	repositories {
+		maven {
+			name = "GitHubPackages"
+			url = uri("https://maven.pkg.github.com/Suyashtnt/JARM-2.0")
+			credentials {
+				username = project.findProperty("gpr.user") ?: ENV.USERNAME
+				password = project.findProperty("gpr.key") ?: ENV.TOKEN
+			}
+		}
+	}
+
 	publications {
 		gpr(MavenPublication) {
 			// add all the jars that should be included when publishing to maven
@@ -84,18 +214,9 @@ publishing {
 		}
 	}
 
-	// select the repositories you want to publish to
-	repositories {
-		maven {
-			name = "GitHubPackages"
-			url = uri("https://maven.pkg.github.com/Suyashtnt/JARM-2.0")
-			credentials {
-				username = project.findProperty("gpr.user") ?: ENV.USERNAME
-				password = project.findProperty("gpr.key") ?: ENV.TOKEN
-			}
-		}
-	}
+
 }
+
 repositories {
 	maven {
 		url = "http://maven.fabricmc.net/"

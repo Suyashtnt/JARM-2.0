@@ -1,12 +1,12 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "item": "minecraft:diamond_leggings"
+    "item": "minecraft:diamond_chestplate"
   },
   "addition": {
     "item": "jarm:strong_diamond"
   },
   "result": {
-    "item": "minecraft:strong_diamond_leggings"
+    "item": "minecraft:strong_diamond_chstplate"
   }
 }

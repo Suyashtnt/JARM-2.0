@@ -1,0 +1,23 @@
+{
+  "group": "jarm",
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["010", "232", "010"],
+  "key": {
+    "0": {
+      "item": "jarm:strong_diamond_block"
+    },
+    "1": {
+      "item": "jarm:ruby_block"
+    },
+    "2": {
+      "item": "minecraft:gold_block"
+    },
+    "3": {
+      "item": "netherite_block"
+    }
+  },
+  "result": {
+    "item": "jarm:netherite_infused_strong_guilded_diamond",
+    "count": 1
+  }
+}

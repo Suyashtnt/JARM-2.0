@@ -1,18 +1,14 @@
 {
   "group": "jarm",
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "000",
-    "000",
-    "000"
-  ],
+  "pattern": ["000", "000", "000"],
   "key": {
     "0": {
-      "item": "jarm:ruby_nugget"
+      "item": "jarm:ruby_ingot"
     }
   },
   "result": {
-    "item": "jarm:ruby",
+    "item": "jarm:ruby_ingot_block",
     "count": 1
   }
 }

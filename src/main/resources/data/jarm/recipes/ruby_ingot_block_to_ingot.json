@@ -3,7 +3,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "jarm:ruby_ingot_ore_block"
+      "item": "jarm:ruby_ingot_block"
     }
   ],
   "result": {

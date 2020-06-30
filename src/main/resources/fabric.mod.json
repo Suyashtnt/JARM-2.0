@@ -2,18 +2,13 @@
   "schemaVersion": 1,
   "id": "jarm",
   "version": "${version}",
-
   "name": "JARM 2.0",
   "description": "JARM but for fabric(will replace the forge one)",
-  "authors": [
-    "TNT MAN",
-    "KrazyMiner001"
-  ],
+  "authors": ["TNT MAN", "KrazyMiner001"],
   "contact": {
     "homepage": "https://jarm.readthedocs.io",
-    "sources": "none"
+    "sources": "https://github.com/Suyashtnt/JARM-2.0"
   },
-
   "license": "MIT",
   "icon": "assets/jarm/icon.png",
   "environment": "*",
@@ -31,8 +26,7 @@
       }
     ]
   },
-  "mixins": [
-  ],
+  "mixins": [],
   "depends": {
     "fabricloader": ">=0.7.4",
     "fabric": "*",

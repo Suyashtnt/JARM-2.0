@@ -4,9 +4,9 @@
     "item": "minecraft:diamond_leggings"
   },
   "addition": {
-    "item": "jarm:strong_diamond"
+    "item": "jarm:netherite_infused_strong_guilded_diamond"
   },
   "result": {
-    "item": "minecraft:strong_diamond_leggings"
+    "item": "jarm:netherite_infused_strong_guilded_diamond_leggings"
   }
 }

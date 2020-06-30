@@ -1,11 +1,7 @@
 {
   "group": "jarm",
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "0",
-    "0",
-    "1"
-  ],
+  "pattern": ["0", "0", "1"],
   "key": {
     "0": {
       "item": "jarm:ruby"
@@ -15,7 +11,7 @@
     }
   },
   "result": {
-    "item": "jarm:ruby_tools_sword",
+    "item": "jarm:ruby_sword",
     "count": 1
   }
 }

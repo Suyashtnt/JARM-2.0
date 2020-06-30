@@ -1,12 +1,12 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "item": "minecraft:diamond_block"
+    "item": "minecraft:diamond_helmet"
   },
   "addition": {
     "item": "jarm:ruby_block"
   },
   "result": {
-    "item": "jarm:strong_diamond"
+    "item": "jarm:strong_diamond_helmet"
   }
 }

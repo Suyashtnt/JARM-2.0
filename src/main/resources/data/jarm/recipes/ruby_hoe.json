@@ -1,11 +1,7 @@
 {
   "group": "jarm",
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "0",
-    "1",
-    "1"
-  ],
+  "pattern": ["00", " 1", " 1"],
   "key": {
     "0": {
       "item": "jarm:ruby"
@@ -15,7 +11,7 @@
     }
   },
   "result": {
-    "item": "jarm:ruby_tools_shovel",
+    "item": "jarm:ruby_hoe",
     "count": 1
   }
 }
