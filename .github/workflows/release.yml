@@ -41,7 +41,7 @@ jobs:
       - name: Assemble jar with Gradle and publish
         env:
           BUILD_NUMBER: ${{ steps.current-time.outputs.formattedTime }}
-          CF_API_KEY: ${{ secrets.CF_ApI_TOKEN }}
+          CF_API_KEY: ${{ secrets.CF_API_TOKEN }}
           BRANCH_NAME: ${{ github.ref }}
         run:  ./gradlew clean --refresh-dependencies build releaseOnCf --stacktrace
 
