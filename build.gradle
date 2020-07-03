@@ -143,7 +143,7 @@ task releaseOnCf {
 	}
 	def time = df.format(new Date())
 	def changes = new StringBuilder()
-	changes << "<h2>REI v$project.version for $project.supported_version</h2>Updated at <b>$time</b>.<br><a href=\"https://www.github.com/suyashtnt/JARM-2.0/commits/$branch\">Click here for changelog</a>"
+	changes << "<h2>JARM v$project.version for $project.supported_version</h2>Updated at <b>$time</b>.<br><a href=\"https://www.github.com/suyashtnt/JARM-2.0/commits/$branch\">Click here for changelog</a>"
 	def proc = "git log --max-count=200 --pretty=format:%s".execute()
 	proc.in.eachLine { line ->
 		def processedLine = line.toString()
