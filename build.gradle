@@ -43,6 +43,8 @@ dependencies {
 
     // nice things for development but are not libs
     modRuntime "me.shedaniel:RoughlyEnoughItems:4.5.5"
+	modRuntime "com.github.jellysquid3:sodium-fabric:8b10244"
+	modRuntime "com.github.joaoh1:OkZoomer:4.0.0-alpha.3.1.16.pre5"
 
 
 	afterEvaluate {
@@ -205,7 +207,7 @@ publishing {
 	// select the repositories you want to publish to
 	repositories {
 		// uncomment to publish to the local maven
-		// mavenLocal()
+		mavenLocal()
 	}
 }
 repositories {
@@ -220,7 +222,10 @@ repositories {
 	}
 
 	maven { url 'https://jitpack.io' }
+
+	mavenLocal()
 }
+
 compileKotlin {
     kotlinOptions {
         jvmTarget = "1.8"

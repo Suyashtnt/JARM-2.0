@@ -2,8 +2,9 @@ package com.tnt_man_inc.jarm.items_and_blocks
 
 import com.tnt_man_inc.jarm.Utils.ITEM_SETTINGS
 import com.tnt_man_inc.jarm.Utils.registerItem
+import com.tnt_man_inc.jarm.items_and_blocks.custom_types.custom_item_types.EnchantedApple
+import com.tnt_man_inc.jarm.items_and_blocks.custom_types.custom_item_types.RubyBow
 import com.tnt_man_inc.jarm.items_and_blocks.custom_types.custom_item_types.RubyShard
-import com.tnt_man_inc.jarm.items_and_blocks.food.EnchantedApple
 import net.minecraft.entity.effect.StatusEffectInstance
 import net.minecraft.entity.effect.StatusEffects
 import net.minecraft.item.BucketItem
@@ -25,6 +26,7 @@ object Items {
     val ENCHANTED_RUBY_APPLE = registerItem("enchanted_ruby_apple", ITEM_SETTINGS()?.food(FoodComponent.Builder().hunger(8).saturationModifier(6f).statusEffect(StatusEffectInstance(StatusEffects.REGENERATION, 20 * 20, 1), 1f).statusEffect(StatusEffectInstance(StatusEffects.ABSORPTION, 20 * 120, 3), 1f).statusEffect(StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 20 * 300, 0), 1f).statusEffect(StatusEffectInstance(StatusEffects.RESISTANCE, 20 * 300, 0), 1f).build())?.let { EnchantedApple(it) })
     val NISGD_APPLE = registerItem("netherite_infused_strong_guilded_diamond_apple", Item(ITEM_SETTINGS()?.food(FoodComponent.Builder().hunger(8).saturationModifier(6f).statusEffect(StatusEffectInstance(StatusEffects.REGENERATION, 20 * 20, 1), 1f).statusEffect(StatusEffectInstance(StatusEffects.ABSORPTION, 20 * 120, 3), 1f).statusEffect(StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 20 * 300, 0), 1f).statusEffect(StatusEffectInstance(StatusEffects.RESISTANCE, 20 * 300, 0), 1f).build())))
     val ENCHANTED_NISGD_APPLE = registerItem("enchanted_netherite_infused_strong_guilded_diamond_apple", ITEM_SETTINGS()?.food(FoodComponent.Builder().hunger(200).saturationModifier(2000f).statusEffect(StatusEffectInstance(StatusEffects.REGENERATION, 20 * 15, 5), 1f).statusEffect(StatusEffectInstance(StatusEffects.ABSORPTION, 20 * 500, 3), 1f).statusEffect(StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 20 * 50000, 0), 1f).build())?.let { EnchantedApple(it) })
+    val RUBY_BOW = registerItem("ruby_bow", ITEM_SETTINGS()?.let { RubyBow(it) })
 
     @JvmField
     val RUBY_LIQUID_BUCKET = registerItem("ruby_liquid_bucket", BucketItem(other.STILL_RUBY_LIQUID, ITEM_SETTINGS()?.recipeRemainder(Items.BUCKET)))

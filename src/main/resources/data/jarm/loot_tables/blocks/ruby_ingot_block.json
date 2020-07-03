@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "jarm:block_of_ruby_ingot"
+          "name": "jarm:ruby_ingot_block"
         }
       ],
       "conditions": [

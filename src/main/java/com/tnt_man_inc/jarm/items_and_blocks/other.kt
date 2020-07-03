@@ -19,4 +19,5 @@ object other {
     @kotlin.jvm.JvmField
     val RUBY_LIQUID_LAKE: LakeFeature = Registry.register(Registry.FEATURE, id("ruby_liquid_lake"), LakeFeature(SingleStateFeatureConfig.CODEC))
 
+
 }

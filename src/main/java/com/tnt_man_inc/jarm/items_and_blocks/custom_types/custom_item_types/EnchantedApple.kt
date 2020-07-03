@@ -1,4 +1,4 @@
-package com.tnt_man_inc.jarm.items_and_blocks.food
+package com.tnt_man_inc.jarm.items_and_blocks.custom_types.custom_item_types
 
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
