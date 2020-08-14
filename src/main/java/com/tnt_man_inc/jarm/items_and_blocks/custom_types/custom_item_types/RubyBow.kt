@@ -107,6 +107,7 @@ class RubyBow(settings: Settings) : RangedWeaponItem(settings) {
 
     override fun getRange(): Int {
         return 100
+
     }
 
 

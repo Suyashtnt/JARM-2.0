@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "com.tnt_man_inc.jarm.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "BlocksAccessor",
+    "BuilderAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
