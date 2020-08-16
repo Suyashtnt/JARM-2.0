@@ -21,6 +21,7 @@ import net.fabricmc.fabric.api.biomes.v1.OverworldClimate
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry
 import net.fabricmc.fabric.api.event.registry.RegistryEntryAddedCallback
+import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.client.render.entity.EntityRenderDispatcher
 import net.minecraft.entity.EntityType
 import net.minecraft.entity.SpawnGroup
@@ -95,7 +96,7 @@ class Main : ModInitializer {
         EntityRendererRegistry.INSTANCE.register(RUBY_GUARDIAN) { dispatcher: EntityRenderDispatcher?, _: EntityRendererRegistry.Context? -> RubyGuardianRenderer(dispatcher) }
 
         //registers techreborn stuff if mod is present
-        if (net.fabricmc.loader.api.FabricLoader.getInstance().isModLoaded("techreborn")) {
+        if (FabricLoader.getInstance().isModLoaded("techreborn")) {
             TechRebornLoader.init()
         }
     }
