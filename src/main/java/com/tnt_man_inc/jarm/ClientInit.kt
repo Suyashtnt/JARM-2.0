@@ -77,10 +77,6 @@ class ClientInit : ClientModInitializer {
 
 
         // The FluidRenderer gets the sprites and color from a FluidRenderHandler during rendering
-
-        // The FluidRenderer gets the sprites and color from a FluidRenderHandler during rendering
-
-        // The FluidRenderer gets the sprites and color from a FluidRenderHandler during rendering
         val renderHandler: FluidRenderHandler = object : FluidRenderHandler {
             override fun getFluidSprites(view: BlockRenderView, pos: BlockPos, state: FluidState): Array<Sprite?> {
                 return fluidSprites
@@ -91,7 +87,7 @@ class ClientInit : ClientModInitializer {
             }
         }
 
-        FluidRenderHandlerRegistry.INSTANCE.register(still, renderHandler);
-        FluidRenderHandlerRegistry.INSTANCE.register(flowing, renderHandler);
+        FluidRenderHandlerRegistry.INSTANCE.register(still, renderHandler)
+        FluidRenderHandlerRegistry.INSTANCE.register(flowing, renderHandler)
     }
 }
