@@ -50,7 +50,7 @@ class ClientInit : ClientModInitializer {
         // If they're not already present, add the sprites to the block atlas
 
         // If they're not already present, add the sprites to the block atlas
-        ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEX).register(ClientSpriteRegistryCallback { atlasTexture: SpriteAtlasTexture?, registry: ClientSpriteRegistryCallback.Registry ->
+        ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEX).register(ClientSpriteRegistryCallback { _: SpriteAtlasTexture?, registry: ClientSpriteRegistryCallback.Registry ->
             registry.register(stillSpriteId)
             registry.register(flowingSpriteId)
         })

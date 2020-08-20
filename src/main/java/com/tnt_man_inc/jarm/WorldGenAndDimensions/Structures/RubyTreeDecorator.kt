@@ -20,7 +20,7 @@ class RubyTreeDecorator(codec: Codec<ChanceDecoratorConfig?>?) : Decorator<Chanc
         if (random.nextInt(config.chance) == 0) {
             // Generate 4 - 8 trees
             val treeCount = 4 + random.nextInt(5)
-            return IntStream.range(0, treeCount).mapToObj { i: Int ->
+            return IntStream.range(0, treeCount).mapToObj {
                 val x = random.nextInt(16) + pos.x
                 val z = random.nextInt(16) + pos.z
                 val y = world.getTopY(Heightmap.Type.MOTION_BLOCKING, x, z)
