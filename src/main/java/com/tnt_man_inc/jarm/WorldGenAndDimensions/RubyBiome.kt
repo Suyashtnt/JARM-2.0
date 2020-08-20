@@ -69,7 +69,10 @@ class RubyBiome internal constructor() : Biome(Settings().configureSurfaceBuilde
                                 ?.configure(ChanceDecoratorConfig(150))
                         )
         )
-        addFeature(GenerationStep.Feature.LOCAL_MODIFICATIONS, other.RUBY_LIQUID_LAKE.configure(SingleStateFeatureConfig(Blocks.RUBY_LIQUID.defaultState)).createDecoratedFeature(Decorator.WATER_LAKE.configure(ChanceDecoratorConfig(40))))
+        addFeature(GenerationStep.Feature.LOCAL_MODIFICATIONS, other.RUBY_LIQUID_LAKE
+                .configure(SingleStateFeatureConfig(Blocks.RUBY_LIQUID.defaultState))
+                .createDecoratedFeature(Decorator.WATER_LAKE
+                        .configure(ChanceDecoratorConfig(40))))
         DefaultBiomeFeatures.addDungeons(this)
         DefaultBiomeFeatures.addExtraMountainTrees(this)
         DefaultBiomeFeatures.addDefaultFlowers(this)

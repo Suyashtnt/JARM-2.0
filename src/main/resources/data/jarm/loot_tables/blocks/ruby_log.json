@@ -2,11 +2,11 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "rolls": 9,
+      "rolls": 1,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "jarm:ruby"
+          "name": "jarm:ruby_log"
         }
       ],
       "conditions": [

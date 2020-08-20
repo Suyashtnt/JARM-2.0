@@ -14,6 +14,7 @@ import net.minecraft.item.Items
 
 /**
  * all Items added by JARM
+ * @see registerItem
  */
 object Items {
     @JvmField
