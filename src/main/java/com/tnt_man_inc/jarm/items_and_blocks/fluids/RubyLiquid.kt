@@ -4,13 +4,19 @@ import com.tnt_man_inc.jarm.items_and_blocks.Blocks
 import com.tnt_man_inc.jarm.items_and_blocks.Items
 import com.tnt_man_inc.jarm.items_and_blocks.other
 import net.minecraft.block.BlockState
+import net.minecraft.fluid.FlowableFluid
 import net.minecraft.fluid.Fluid
 import net.minecraft.fluid.FluidState
 import net.minecraft.item.Item
 import net.minecraft.state.StateManager
 import net.minecraft.state.property.Properties
 
-
+/**
+ * Look at the name
+ * If you don't want to its the ruby fluid fluid
+ *
+ * @see BaseFluid
+ */
 abstract class RubyLiquid : BaseFluid() {
     override fun toBlockState(state: FluidState?): BlockState {
         return Blocks.RUBY_LIQUID.defaultState.with(Properties.LEVEL_15, method_15741(state))

@@ -8,6 +8,9 @@ import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
 import net.minecraft.world.World
 
+/**
+ * An item when in your inventory makes you weak
+ */
 class RubyShard(settings: Settings?) : Item(settings) {
     override fun inventoryTick(stack: ItemStack, world: World, entity: Entity, slot: Int, selected: Boolean) {
         if (entity is PlayerEntity) {

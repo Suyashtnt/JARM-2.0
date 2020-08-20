@@ -6,6 +6,9 @@ import net.minecraft.recipe.Ingredient
 import net.minecraft.util.Lazy
 import java.util.function.Supplier
 
+/**
+ * Tool materials for any mod who wants to add compatibility if they add a custom tool type.
+ */
 enum class JARMToolMaterials(private val miningLevel: Int, private val itemDurability: Int, private val miningSpeed: Float, private val attackDamage: Float, private val enchantability: Int, repairIngredient: Supplier<Ingredient>) : ToolMaterial {
     RUBY(3, 1301, 7f, 2f, 20, Supplier<Ingredient> { Ingredient.ofItems(Items.RUBY) }),
     STRONG_DIAMOND(3, 1301, 7f, 2.5f, 20, Supplier<Ingredient> { Ingredient.ofItems(Items.RUBY) }),

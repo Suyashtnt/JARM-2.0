@@ -12,6 +12,9 @@ import net.minecraft.item.FoodComponent
 import net.minecraft.item.Item
 import net.minecraft.item.Items
 
+/**
+ * all Items added by JARM
+ */
 object Items {
     @JvmField
     val RUBY = registerItem("ruby", Item(ITEM_SETTINGS()))

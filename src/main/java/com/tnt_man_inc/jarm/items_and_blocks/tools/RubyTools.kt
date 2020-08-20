@@ -9,6 +9,10 @@ import net.minecraft.item.ShovelItem
 import net.minecraft.item.SwordItem
 import net.minecraft.item.ToolItem
 
+/**
+ * Where the ruby tools stay
+ * @see JARMToolMaterials
+ */
 object RubyTools {
     var RUBY_SWORD: ToolItem = registerItem("ruby_sword", SwordItem(JARMToolMaterials.RUBY, 5 - 2, 7.0f, ITEM_SETTINGS()))
     var RUBY_PICKAXE: ToolItem = registerItem("ruby_pickaxe", PickaxeSubclass(JARMToolMaterials.RUBY, 1, 5f, ITEM_SETTINGS()))

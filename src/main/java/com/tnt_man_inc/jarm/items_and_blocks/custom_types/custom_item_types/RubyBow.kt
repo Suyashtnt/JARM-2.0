@@ -15,6 +15,9 @@ import net.minecraft.util.UseAction
 import net.minecraft.world.World
 import java.util.function.Predicate
 
+/**
+ * A bow but s t r o n k e r and shoots straight
+ */
 class RubyBow(settings: Settings) : RangedWeaponItem(settings) {
 
 

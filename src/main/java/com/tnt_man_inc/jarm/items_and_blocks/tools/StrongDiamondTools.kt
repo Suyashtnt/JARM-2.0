@@ -8,6 +8,10 @@ import net.minecraft.item.ToolItem
 import net.minecraft.util.Identifier
 import net.minecraft.util.registry.Registry
 
+/**
+ * Where the 2 strong diamond tools stay
+ * @see JARMToolMaterials
+ */
 object StrongDiamondTools {
     var STRONG_DIAMOND_SWORD: ToolItem = register("strong_diamond_sword", SwordItem(JARMToolMaterials.STRONG_DIAMOND, 6, 7.0f, Item.Settings().group(Main.JARM_GROUP)))
     var STRONG_DIAMOND_PICKAXE: ToolItem = register("strong_diamond_pickaxe", PickaxeSubclass(JARMToolMaterials.STRONG_DIAMOND, 5, 5f, Item.Settings().group(Main.JARM_GROUP)))

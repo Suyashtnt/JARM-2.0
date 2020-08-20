@@ -8,7 +8,7 @@ import com.tnt_man_inc.jarm.items_and_blocks.Blocks
 import com.tnt_man_inc.jarm.items_and_blocks.Items
 import com.tnt_man_inc.jarm.items_and_blocks.armor.NetheriteInfusedStrongGuildedDiamondArmor
 import com.tnt_man_inc.jarm.items_and_blocks.armor.RubyArmor
-import com.tnt_man_inc.jarm.items_and_blocks.armor.strong_diamond_armor.StrongDiamondArmor
+import com.tnt_man_inc.jarm.items_and_blocks.armor.StrongDiamondArmor
 import com.tnt_man_inc.jarm.items_and_blocks.tools.NetheriteInfusedStrongGuildedDiamondTools
 import com.tnt_man_inc.jarm.items_and_blocks.tools.RubyTools
 import com.tnt_man_inc.jarm.items_and_blocks.tools.StrongDiamondTools
@@ -25,7 +25,6 @@ import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.client.render.entity.EntityRenderDispatcher
 import net.minecraft.entity.EntityType
 import net.minecraft.entity.SpawnGroup
-import net.minecraft.entity.mob.HostileEntity
 import net.minecraft.item.Item
 import net.minecraft.item.ItemGroup
 import net.minecraft.item.ItemStack
@@ -51,14 +50,11 @@ class Main : ModInitializer {
             )).createDecoratedFeature(Decorator.COUNT_RANGE.configure(RangeDecoratorConfig(1,  // Number of veins per
                     // chunk
                     0, 1, 18))))
-            (biome as? RubyBiome)?.addFeature(GenerationStep.Feature.UNDERGROUND_ORES, Feature.ORE.configure(OreFeatureConfig(OreFeatureConfig.Target.NATURAL_STONE, Blocks.SPECIAL_RUBY_ORE.defaultState, 8 // Ore
-                    // vein
-                    // size
-            )).createDecoratedFeature(Decorator.COUNT_RANGE.configure(RangeDecoratorConfig(1,  // Number of veins per
-                    // chunk
+            (biome as? RubyBiome)?.addFeature(GenerationStep.Feature.UNDERGROUND_ORES, Feature.ORE.configure(OreFeatureConfig(OreFeatureConfig.Target.NATURAL_STONE, Blocks.SPECIAL_RUBY_ORE.defaultState, 16
+            )).createDecoratedFeature(Decorator.COUNT_RANGE.configure(RangeDecoratorConfig(8,
                     0,
                     1,
-                    18
+                    32
             ))))
         }
     }
@@ -90,7 +86,7 @@ class Main : ModInitializer {
         NetheriteInfusedStrongGuildedDiamondArmor.init()
 
         //registers Ruby Guardian and spawn egg
-        FabricDefaultAttributeRegistry.register(RUBY_GUARDIAN, HostileEntity.createHostileAttributes())
+        FabricDefaultAttributeRegistry.register(RUBY_GUARDIAN, RubyGuardian.createAttributes())
         Registry.register(Registry.ITEM, Identifier("jarm", "ruby_guardian_spawn_egg"), SpawnEggItem(RUBY_GUARDIAN, 0xC41F1F, 0xC41F72, Utils.ITEM_SETTINGS()))
         //registers it's renderer
         EntityRendererRegistry.INSTANCE.register(RUBY_GUARDIAN) { dispatcher: EntityRenderDispatcher?, _: EntityRendererRegistry.Context? -> RubyGuardianRenderer(dispatcher) }

@@ -11,6 +11,9 @@ import net.minecraft.sound.SoundEvents
 import net.minecraft.util.Lazy
 import java.util.function.Supplier
 
+/**
+ * JARM Armor materials
+ */
 enum class JARMArmorMaterials(val id: String, private val durabilityMultiplier: Int, private val protectionAmounts: IntArray, private val enchantability: Int, private val equipSound: SoundEvent, private val toughness: Float, private val knockbackResistance: Float, supplier: Supplier<Ingredient>) : ArmorMaterial {
     RUBY("ruby", 33, intArrayOf(2, 5, 7, 2), 22, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 1.7f, 0.0f, Supplier<Ingredient> { Ingredient.ofItems(Items.RUBY) }),
     STRONG_DIAMOND("strong_diamond", 40, intArrayOf(5, 8, 10, 5), 28, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 5.0f, 0.3f, Supplier<Ingredient> { Ingredient.ofItems(Items.STRONG_DIAMOND) }),

@@ -6,5 +6,11 @@ import net.minecraft.block.Block
 import net.minecraft.block.Material
 import net.minecraft.sound.BlockSoundGroup
 
-class RubyBricks : Block(FabricBlockSettings.of(Material.METAL).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 3)
-        .strength(3f, 3.0f).sounds(BlockSoundGroup.NETHER_BRICKS)) 
+/**
+ * A Little harder version of nether bricks
+ */
+class RubyBricks : Block(FabricBlockSettings.of(Material.METAL)
+        .breakByHand(false)
+        .breakByTool(FabricToolTags.PICKAXES, 3)
+        .strength(3f, 3.0f)
+        .sounds(BlockSoundGroup.NETHER_BRICKS))

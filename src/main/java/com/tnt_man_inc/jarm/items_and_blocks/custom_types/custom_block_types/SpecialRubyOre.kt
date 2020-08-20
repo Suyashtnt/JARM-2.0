@@ -6,5 +6,11 @@ import net.minecraft.block.Block
 import net.minecraft.block.Material
 import net.minecraft.sound.BlockSoundGroup
 
-class SpecialRubyOre : Block(FabricBlockSettings.of(Material.STONE).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 5)
-        .strength(3f, 3.0f).sounds(BlockSoundGroup.STONE)) 
+/**
+ * Another ore material
+ */
+class SpecialRubyOre : Block(FabricBlockSettings.of(Material.STONE)
+        .breakByHand(false)
+        .breakByTool(FabricToolTags.PICKAXES, 5)
+        .strength(3f, 3.0f)
+        .sounds(BlockSoundGroup.STONE))

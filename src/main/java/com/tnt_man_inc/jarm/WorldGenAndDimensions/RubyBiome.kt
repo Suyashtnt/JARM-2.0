@@ -28,7 +28,15 @@ import net.minecraft.world.gen.trunk.StraightTrunkPlacer
 
 class RubyBiome internal constructor() : Biome(Settings().configureSurfaceBuilder(SurfaceBuilder.DEFAULT, SurfaceBuilder.GRASS_CONFIG)
         .precipitation(Precipitation.RAIN).category(Category.PLAINS).depth(0.24f).scale(0.2f)
-        .temperature(0.6f).downfall(0.7f).effects(BiomeEffects.Builder().waterColor(14489110).waterFogColor(14489110).fogColor(14489110).moodSound(BiomeMoodSound.CAVE).build()).parent(null)) {
+        .temperature(0.6f)
+        .downfall(0.7f)
+        .effects(BiomeEffects.Builder()
+                .waterColor(14489110)
+                .waterFogColor(14489110)
+                .fogColor(14489110)
+                .moodSound(BiomeMoodSound.CAVE)
+                .build())
+        .parent(null)) {
 
     var RUBY_TREE_FEATURE: Feature<TreeFeatureConfig>? = Registry.register(Registry.FEATURE, Utils.id("ruby_tree"), RubyTreeFeature(TreeFeatureConfig.CODEC))
     var RUBY_TREE_DECORATOR: RubyTreeDecorator? = Registry.register(Registry.DECORATOR, Utils.id("ruby_tree"), RubyTreeDecorator(ChanceDecoratorConfig.field_24980))
@@ -58,7 +66,7 @@ class RubyBiome internal constructor() : Biome(Settings().configureSurfaceBuilde
         addFeature(GenerationStep.Feature.VEGETAL_DECORATION,
                 RUBY_TREE_FEATURE?.configure(RUBY_TREE_CONFIG)
                         ?.createDecoratedFeature(RUBY_TREE_DECORATOR
-                                ?.configure(ChanceDecoratorConfig(75))
+                                ?.configure(ChanceDecoratorConfig(150))
                         )
         )
         addFeature(GenerationStep.Feature.LOCAL_MODIFICATIONS, other.RUBY_LIQUID_LAKE.configure(SingleStateFeatureConfig(Blocks.RUBY_LIQUID.defaultState)).createDecoratedFeature(Decorator.WATER_LAKE.configure(ChanceDecoratorConfig(40))))

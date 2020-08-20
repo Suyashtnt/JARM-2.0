@@ -7,6 +7,10 @@ import net.minecraft.entity.EquipmentSlot
 import net.minecraft.item.ArmorItem
 import net.minecraft.item.Item
 
+/**
+ * Where the Ruby Armor Register stays
+ * @see JARMArmorMaterials
+ */
 object RubyArmor {
     val RUBY_HELMET: Item = registerItem("ruby_helmet", ArmorItem(JARMArmorMaterials.RUBY, EquipmentSlot.HEAD, ITEM_SETTINGS()?.fireproof()))
     val RUBY_CHESTPLATE: Item = registerItem("ruby_chestplate", ArmorItem(JARMArmorMaterials.RUBY, EquipmentSlot.CHEST, ITEM_SETTINGS()?.fireproof()))

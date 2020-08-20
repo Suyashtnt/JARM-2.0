@@ -6,7 +6,9 @@ import net.minecraft.util.registry.Registry
 import net.minecraft.world.gen.feature.LakeFeature
 import net.minecraft.world.gen.feature.SingleStateFeatureConfig
 
-
+/**
+ * Random Stuff that needs to be registered
+ */
 object other {
 
 

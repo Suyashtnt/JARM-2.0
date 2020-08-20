@@ -13,6 +13,9 @@ import net.minecraft.block.*
 import net.minecraft.block.Blocks
 import net.minecraft.sound.BlockSoundGroup
 
+/**
+ * Blocks added by JARM
+ */
 object Blocks {
     val RUBY_ORE: Block = registerBlock("ruby_ore", Main.JARM_GROUP, RubyOre())
     val SPECIAL_RUBY_ORE: Block = registerBlock("special_ruby_ore", Main.JARM_GROUP, SpecialRubyOre())
@@ -23,7 +26,7 @@ object Blocks {
     val RUBY_INGOT_BLOCK: Block = registerBlock("ruby_ingot_block", Main.JARM_GROUP, Block(FabricBlockSettings.of(Material.METAL).hardness(4.0f)))
     val NETHERITE_INFUSED_STRONG_GUILDED_DIAMOND_BLOCK = registerBlock("netherite_infused_strong_guilded_diamond_block", Main.JARM_GROUP, Block(FabricBlockSettings.of(Material.METAL).hardness(8.0f)))
     val RUBY_WOOD: Block = registerBlock("ruby_wood", Main.JARM_GROUP, Block(FabricBlockSettings.of(Material.NETHER_WOOD).hardness(2f)))
-    val RUBY_LEAVES: LeavesBlock = registerBlock("ruby_leaves", Main.JARM_GROUP, LeavesBlock(AbstractBlock.Settings.of(Material.LEAVES).strength(0.2F).ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque().allowsSpawning(BlocksAccessor::callCanSpawnOnLeaves).suffocates(BlocksAccessor::callNever).blockVision(BlocksAccessor::callNever))
+    val RUBY_LEAVES: LeavesBlock = registerBlock("ruby_leaves", Main.JARM_GROUP, LeavesBlock(AbstractBlock.Settings.of(CustomMaterial.RUBY_LEAVES).strength(0.2F).ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque().allowsSpawning(BlocksAccessor::callCanSpawnOnLeaves).suffocates(BlocksAccessor::callNever).blockVision(BlocksAccessor::callNever))
     )
 
     @kotlin.jvm.JvmField
@@ -32,6 +35,9 @@ object Blocks {
 
 }
 
+/**
+ * where custom materials used live
+ */
 object CustomMaterial {
-    val RUBY_LEAVES = (FabricMaterialBuilder(MaterialColor.FOLIAGE)).lightPassesThrough().destroyedByPiston().build()
+    val RUBY_LEAVES = (FabricMaterialBuilder(MaterialColor.FOLIAGE)).lightPassesThrough().build()
 }

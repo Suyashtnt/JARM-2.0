@@ -11,6 +11,12 @@ import net.minecraft.world.BlockView
 import net.minecraft.world.WorldAccess
 import net.minecraft.world.WorldView
 
+/**
+ * Look at the name
+ * If you dont want to its a base fluid
+ *
+ * @see FlowableFluid
+ */
 abstract class BaseFluid : FlowableFluid() {
     override fun matchesType(fluid: Fluid?): Boolean {
         return fluid == getStill() || fluid == getFlowing();

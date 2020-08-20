@@ -6,5 +6,11 @@ import net.minecraft.block.Block
 import net.minecraft.block.Material
 import net.minecraft.sound.BlockSoundGroup
 
-class StrongDiamondBlock : Block(FabricBlockSettings.of(Material.METAL).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 5)
-        .strength(3f, 3.0f).sounds(BlockSoundGroup.METAL)) 
+/**
+ * s t r o n k  block
+ */
+class StrongDiamondBlock : Block(FabricBlockSettings.of(Material.METAL)
+        .breakByHand(false)
+        .breakByTool(FabricToolTags.PICKAXES, 5)
+        .strength(3f, 3.0f)
+        .sounds(BlockSoundGroup.METAL))
