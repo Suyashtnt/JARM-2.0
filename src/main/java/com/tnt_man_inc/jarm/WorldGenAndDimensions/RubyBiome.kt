@@ -41,7 +41,7 @@ class RubyBiome internal constructor() : Biome(Settings().configureSurfaceBuilde
     var RUBY_TREE_FEATURE: Feature<TreeFeatureConfig>? = Registry.register(Registry.FEATURE, Utils.id("ruby_tree"), RubyTreeFeature(TreeFeatureConfig.CODEC))
     var RUBY_TREE_DECORATOR: RubyTreeDecorator? = Registry.register(Registry.DECORATOR, Utils.id("ruby_tree"), RubyTreeDecorator(ChanceDecoratorConfig.field_24980))
     val logProvider: WeightedBlockStateProvider = WeightedBlockStateProvider()
-            .addState(Blocks.RUBY_WOOD.defaultState, 10)
+            .addState(Blocks.RUBY_LOG.defaultState, 10)
     var RUBY_TREE_CONFIG: TreeFeatureConfig? = TreeFeatureConfig.Builder(
             logProvider,
             SimpleBlockStateProvider(Blocks.RUBY_LEAVES.defaultState),
