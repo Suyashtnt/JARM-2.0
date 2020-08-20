@@ -21,6 +21,7 @@ import net.minecraft.fluid.Fluid
 import net.minecraft.fluid.FluidState
 import net.minecraft.resource.ResourceManager
 import net.minecraft.resource.ResourceType
+import net.minecraft.screen.PlayerScreenHandler
 import net.minecraft.util.Identifier
 import net.minecraft.util.math.BlockPos
 import net.minecraft.util.registry.Registry
@@ -46,11 +47,8 @@ class ClientInit : ClientModInitializer {
         val stillSpriteId = Identifier(textureFluidId.namespace, "block/" + textureFluidId.path.toString() + "_still")
         val flowingSpriteId = Identifier(textureFluidId.namespace, "block/" + textureFluidId.path.toString() + "_flow")
 
-
         // If they're not already present, add the sprites to the block atlas
-
-        // If they're not already present, add the sprites to the block atlas
-        ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEX).register(ClientSpriteRegistryCallback { _: SpriteAtlasTexture?, registry: ClientSpriteRegistryCallback.Registry ->
+        ClientSpriteRegistryCallback.event(PlayerScreenHandler.BLOCK_ATLAS_TEXTURE).register(ClientSpriteRegistryCallback { _: SpriteAtlasTexture?, registry: ClientSpriteRegistryCallback.Registry ->
             registry.register(stillSpriteId)
             registry.register(flowingSpriteId)
         })
@@ -69,7 +67,7 @@ class ClientInit : ClientModInitializer {
              * Get the sprites from the block atlas when resources are reloaded
              */
             override fun apply(resourceManager: ResourceManager) {
-                val atlas = MinecraftClient.getInstance().getSpriteAtlas(SpriteAtlasTexture.BLOCK_ATLAS_TEX)
+                val atlas = MinecraftClient.getInstance().getSpriteAtlas(PlayerScreenHandler.BLOCK_ATLAS_TEXTURE)
                 fluidSprites[0] = atlas.apply(stillSpriteId)
                 fluidSprites[1] = atlas.apply(flowingSpriteId)
             }
