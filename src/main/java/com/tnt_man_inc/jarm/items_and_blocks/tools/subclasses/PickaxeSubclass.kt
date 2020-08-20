@@ -7,4 +7,4 @@ import net.minecraft.item.ToolMaterial
  * Since PickaxeItem Is protected this exists
  * @see PickaxeSubclass
  */
-class PickaxeSubclass(material: ToolMaterial?, attackDamage: Int, attackSpeed: Float, settings: Settings?) : PickaxeItem(material, attackDamage, attackSpeed, settings) 
+class PickaxeSubclass(material: ToolMaterial?, attackDamage: Int, attackSpeed: Float, settings: Settings?) : PickaxeItem(material, attackDamage, attackSpeed, settings)

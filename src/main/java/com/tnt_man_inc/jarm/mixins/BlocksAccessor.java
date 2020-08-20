@@ -15,9 +15,14 @@ import org.spongepowered.asm.mixin.gen.Invoker;
 @Mixin(Blocks.class)
 public interface BlocksAccessor {
 
-	@Invoker
-	static Boolean callCanSpawnOnLeaves(BlockState state, BlockView world, BlockPos pos, EntityType<?> type) { throw new RuntimeException(); }
+  @Invoker
+  static Boolean callCanSpawnOnLeaves(BlockState state, BlockView world,
+                                      BlockPos pos, EntityType<?> type) {
+    throw new RuntimeException();
+  }
 
-	@Invoker
-	static boolean callNever(BlockState state, BlockView world, BlockPos pos) { throw new RuntimeException(); }
+  @Invoker
+  static boolean callNever(BlockState state, BlockView world, BlockPos pos) {
+    throw new RuntimeException();
+  }
 }

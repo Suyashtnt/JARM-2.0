@@ -6,4 +6,4 @@ import net.minecraft.item.ToolMaterial
  * Since HoeItem is protected this exists
  * @see HoeItem
  */
-class HoeSubclass(material: ToolMaterial?, attackDamage: Int, attackSpeed: Float, settings: Settings?) : HoeItem(material, attackDamage, attackSpeed, settings) 
+class HoeSubclass(material: ToolMaterial?, attackDamage: Int, attackSpeed: Float, settings: Settings?) : HoeItem(material, attackDamage, attackSpeed, settings)

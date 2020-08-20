@@ -1,6 +1,4 @@
 {
   "replace": false,
-  "values": [
-    "jarm:ruby_leaves"
-  ]
+  "values": ["jarm:ruby_leaves"]
 }

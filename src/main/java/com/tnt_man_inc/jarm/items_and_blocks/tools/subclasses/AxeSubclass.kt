@@ -7,4 +7,4 @@ import net.minecraft.item.ToolMaterial
  * Since AxeItem is protected This exists
  * @see AxeItem
  */
-class AxeSubclass(material: ToolMaterial?, attackDamage: Float, attackSpeed: Float, settings: Settings?) : AxeItem(material, attackDamage, attackSpeed, settings) 
+class AxeSubclass(material: ToolMaterial?, attackDamage: Float, attackSpeed: Float, settings: Settings?) : AxeItem(material, attackDamage, attackSpeed, settings)
