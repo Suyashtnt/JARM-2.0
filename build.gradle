@@ -1,11 +1,11 @@
 import java.text.SimpleDateFormat
 
 plugins {
-	id 'fabric-loom' version '0.4-SNAPSHOT'
-	id 'maven-publish'
+	id "fabric-loom" version "0.4-SNAPSHOT"
+	id "maven-publish"
 	id "com.github.fudge.autofabric" version "1.1.1"
-  id 'org.jetbrains.kotlin.jvm' version '1.4.0'
-	id 'com.matthewprenger.cursegradle' version '1.4.0'
+  id "org.jetbrains.kotlin.jvm" version "1.4.0"
+	id "com.matthewprenger.cursegradle" version "1.4.0"
 	id("net.corda.plugins.jar-filter") version("5.0.8") apply false
 }
 
@@ -26,43 +26,43 @@ def modVersion = (ENV.TAG ?: version)
 version = "${project.mod_version}+${project.minecraft_version}"
 
 dependencies {
-	modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
-	compileOnly 'org.jetbrains:annotations:19.0.0'
+	modImplementation ("net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}")
+	compileOnly ("org.jetbrains:annotations:19.0.0")
 
 	//to change the versions see the gradle.properties file
-	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
-	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	minecraft ("com.mojang:minecraft:${project.minecraft_version}")
+	mappings ("net.fabricmc:yarn:${project.yarn_mappings}:v2")
+	modImplementation ("net.fabricmc:fabric-loader:${project.loader_version}")
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-	implementation "org.jetbrains.kotlin:kotlin-reflect:${project.kotlin_version}"
+	modImplementation ("net.fabricmc.fabric-api:fabric-api:${project.fabric_version}")
+	implementation ("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+	implementation ("org.jetbrains.kotlin:kotlin-reflect:${project.kotlin_version}")
 
 
 	// techreborn
-	modImplementation ('TechReborn:TechReborn-1.16:3.4.5+build.88') {
-		exclude group: "net.fabricmc.fabric-api"
-		exclude group: "RebornCore"
+	modImplementation ("TechReborn:TechReborn-1.16:3.4.5+build.88") {
+		exclude group: ("net.fabricmc.fabric-api")
+		exclude group: ("RebornCore")
 	}
-	modImplementation ('RebornCore:RebornCore-1.16:4.3.4+build.64') {
-		exclude group: "net.fabricmc.fabric-api"
+	modImplementation ("RebornCore:RebornCore-1.16:4.3.4+build.64") {
+		exclude group: ("net.fabricmc.fabric-api")
 	}
 
     // nice things for development but are not libs
-    modRuntime "me.shedaniel:RoughlyEnoughItems:4.5.5"
-	modRuntime "com.github.joaoh1:OkZoomer:4.0.0-alpha.3.1.16.pre5"
+    modRuntime ("me.shedaniel:RoughlyEnoughItems:4.5.5")
+	modRuntime ("com.github.joaoh1:OkZoomer:4.0.0-alpha.3.1.16.pre5")
 
 
 	afterEvaluate {
-		def listAdded = new ArrayList(Arrays.asList((api_exculde as String).split(',')))
+		def listAdded = new ArrayList(Arrays.asList((api_exculde as String).split(",")))
 		def eachDep = { dep ->
-			for (apiIncludeDepStr in (api_include as String).split(',')) {
+			for (apiIncludeDepStr in (api_include as String).split(",")) {
 				if (apiIncludeDepStr.isEmpty()) continue
-				def apiIncludeGroup = apiIncludeDepStr.split(':')[0]
-				def apiIncludeDep = apiIncludeDepStr.split(':')[1]
+				def apiIncludeGroup = apiIncludeDepStr.split(":")[0]
+				def apiIncludeDep = apiIncludeDepStr.split(":")[1]
 				if (dep.module.id.group == apiIncludeGroup && dep.module.id.name.startsWith(apiIncludeDep)) {
-					def version = dep.module.id.version.indexOf('@') >= 0 ? dep.module.id.version.substring(0, dep.module.id.version.indexOf('@')) : dep.module.id.version
+					def version = dep.module.id.version.indexOf("@") >= 0 ? dep.module.id.version.substring(0, dep.module.id.version.indexOf("@")) : dep.module.id.version
 					def mavenDep = "${dep.module.id.group}:${dep.module.id.name}:$version"
 					if (!(mavenDep in listAdded)) {
 						include(mavenDep) {
@@ -83,12 +83,12 @@ processResources {
 	inputs.property "version", project.version
 
 	from(sourceSets.main.resources.srcDirs) {
-		include "fabric.mod.json"
-		expand "version": project.version
+		include ("fabric.mod.json")
+		expand ("version": project.version)
 	}
 
 	from(sourceSets.main.resources.srcDirs) {
-		exclude "fabric.mod.json"
+		exclude ("fabric.mod.json")
 	}
 }
 
@@ -164,8 +164,8 @@ task releaseOnCf {
 }
 
 curseforge {
-	if (project.hasProperty('CF_API_KEY') || System.getenv('CF_API_KEY') != null) {
-		apiKey = project.hasProperty('CF_API_KEY') ? project.property('CF_API_KEY') : System.getenv('CF_API_KEY')
+	if (project.hasProperty("CF_API_KEY") || System.getenv("CF_API_KEY") != null) {
+		apiKey = project.hasProperty("CF_API_KEY") ? project.property("CF_API_KEY") : System.getenv("CF_API_KEY")
 		project {
 			id = "391183"
 			releaseType = "beta"
@@ -203,10 +203,10 @@ publishing {
 		mavenJava(MavenPublication) {
 			// add all the jars that should be included when publishing to maven
 			artifact(remapJar) {
-				builtBy remapJar
+				builtBy (remapJar)
 			}
 			artifact(sourcesJar) {
-				builtBy remapSourcesJar
+				builtBy (remapSourcesJar)
 			}
 		}
 	}
@@ -228,7 +228,7 @@ repositories {
 		name = "Fabric2"
 	}
 
-	maven { url 'https://jitpack.io' }
+	maven { url "https://jitpack.io" }
 
 	mavenLocal()
 }
