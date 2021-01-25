@@ -42,7 +42,7 @@ dependencies {
 	modImplementation 'TechReborn:TechReborn-1.16:3.4.2+build.48'
 
     // nice things for development but are not libs
-    modRuntime "me.shedaniel:RoughlyEnoughItems:4.5.5"
+    modRuntime "me.shedaniel:RoughlyEnoughItems:5.8.10"
 	modRuntime "com.github.jellysquid3:sodium-fabric:8b10244"
 	modRuntime "com.github.joaoh1:OkZoomer:4.0.0-alpha.3.1.16.pre5"
 
